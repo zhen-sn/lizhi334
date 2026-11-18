@@ -1,0 +1,341 @@
+/* ============ 评论 / 账号 ============ */
+
+/* --- 顶栏账号入口 --- */
+.account {
+  position: relative;
+  flex: none;
+}
+.account__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px 0 5px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line-2);
+  color: var(--fg-2);
+  font-size: 12.5px;
+  transition: border-color 0.16s var(--ease), color 0.16s var(--ease);
+}
+.account__btn:hover {
+  border-color: var(--gold-line);
+  color: var(--fg);
+}
+.account__btn--plain {
+  padding: 0 14px;
+  gap: 6px;
+}
+.account__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--fg);
+  display: grid;
+  place-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  flex: none;
+}
+.account__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 186px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+  padding: 6px;
+  z-index: 90;
+}
+.account__menu-head {
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--fg-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account__menu :is(button, a) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  color: var(--fg-2);
+  transition: background 0.14s var(--ease), color 0.14s var(--ease);
+}
+.account__menu :is(button, a):hover {
+  background: var(--hover);
+  color: var(--fg);
+}
+.account__menu :is(button, a).active {
+  color: var(--fg);
+}
+/* 退出登录与上面几项之间留一道分隔 */
+.account__menu-quit {
+  margin-top: 4px;
+  border-top: 1px solid var(--line);
+  padding-top: 9px !important;
+  border-radius: 0 0 var(--r-sm) var(--r-sm);
+}
+
+/* --- 登录 / 注册弹窗 --- */
+.auth__tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 18px;
+  background: var(--bg-2);
+  border-radius: var(--r-full);
+}
+.auth__tabs button {
+  flex: 1;
+  height: 32px;
+  border-radius: var(--r-full);
+  font-size: 13px;
+  color: var(--fg-3);
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+.auth__tabs button:hover {
+  color: var(--fg);
+}
+.auth__tabs button.is-on {
+  background: var(--gold);
+  color: var(--on-gold);
+  font-weight: 550;
+}
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.auth__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.auth__field > span {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.auth__err {
+  margin-top: -4px;
+  font-size: 12.5px;
+  color: var(--rust);
+}
+.auth__hint {
+  margin-top: 16px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--fg-3);
+}
+
+/* --- 评论区 --- */
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+.comment__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--fg);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex: none;
+}
+.comment-editor {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.comment-editor__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comment-editor__input {
+  width: 100%;
+  height: auto;
+  min-height: 76px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  resize: vertical;
+}
+.comment-editor__foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.comment-editor__count {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--fg-3);
+}
+.comment-editor__reply {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  background: var(--gold-soft);
+  font-size: 12.5px;
+  color: var(--fg-2);
+}
+.comment-editor__reply .comment__act {
+  margin-left: auto;
+}
+.comments__gate {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--r-md);
+  color: var(--fg-3);
+}
+.comments__gate-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.comments__gate-text b {
+  font-size: 13.5px;
+  color: var(--fg);
+}
+.comments__gate-text span {
+  font-size: 12.5px;
+  color: var(--fg-3);
+}
+.comments__gate-acts {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+.comments__empty {
+  padding: 18px 2px;
+  font-size: 13px;
+}
+.comments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+.comments__thread {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.comment {
+  display: flex;
+  gap: 12px;
+}
+.comment__main {
+  flex: 1;
+  min-width: 0;
+}
+.comment__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.comment__meta b {
+  font-size: 13px;
+}
+.comment__to {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.comment__time {
+  font-size: 11.5px;
+  color: var(--fg-3);
+}
+.comment__text {
+  margin: 6px 0 8px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--fg-2);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.comment__acts {
+  display: flex;
+  gap: 14px;
+}
+.comment__act {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--fg-3);
+  transition: color 0.14s var(--ease);
+}
+.comment__act:hover {
+  color: var(--fg);
+}
+.comment__act.is-on {
+  color: var(--rust);
+}
+.comments__replies {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-left: 22px;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+.comment--reply .comment__avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+}
+
+@media (max-width: 860px) {
+  .account__name {
+    display: none;
+  }
+  .account__btn {
+    padding: 0 5px;
+  }
+  .account__btn--plain {
+    padding: 0 10px;
+  }
+  .comments__gate {
+    flex-wrap: wrap;
+  }
+  .comments__gate-acts {
+    width: 100%;
+    margin-left: 0;
+  }
+  .comments__gate-acts .btn {
+    flex: 1;
+  }
+  .comment-editor {
+    padding: 12px;
+    gap: 10px;
+  }
+  .comments__replies {
+    margin-left: 8px;
+    padding-left: 10px;
+  }
+}

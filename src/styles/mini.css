@@ -1,0 +1,98 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* 迷你播放器：无边框窗口，靠 .mini__drag 拖动 */
+.mini {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background: radial-gradient(130% 180% at 0% 0%, #1c1a15 0%, #0b0b0d 62%);
+  border: 1px solid var(--line);
+  user-select: none;
+}
+
+.mini__drag {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  -webkit-app-region: drag;
+}
+
+.mini__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini__title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini__artist {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--fg-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini__progress {
+  margin-top: 7px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--bg-3);
+  overflow: hidden;
+}
+
+.mini__progress span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.4s linear;
+}
+
+.mini__time {
+  margin-top: 3px;
+  font-size: 10px;
+  color: var(--fg-3);
+}
+
+.mini__controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+
+.mini__controls button {
+  -webkit-app-region: no-drag;
+}
+
+.mini__controls .mini__play {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+.mini__controls .mini__play:hover {
+  filter: brightness(1.08);
+}

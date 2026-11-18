@@ -1,0 +1,111 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* 独立桌面歌词窗 */
+.lyric-win {
+  position: fixed;
+  left: 16px;
+  bottom: 32px;
+  right: 16px;
+  -webkit-app-region: drag;
+  pointer-events: auto;
+  padding: 8px 16px 6px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(20, 18, 12, 0.0) 0%, rgba(20, 18, 12, 0.72) 55%, rgba(20, 18, 12, 0.92) 100%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  color: #f5efe0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft Yahei', sans-serif;
+  backdrop-filter: blur(2px);
+  user-select: none;
+}
+
+.lyric-win__prev {
+  font-size: 12px;
+  color: rgba(245, 239, 224, 0.45);
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  max-height: 16px;
+}
+
+.lyric-win__curr {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f5efe0;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+.lyric-win__sub {
+  font-size: 10px;
+  color: rgba(245, 239, 224, 0.5);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-top: 1px;
+}
+
+/* 工具按钮（右上角）。解锁态下只在鼠标悬停时显示，锁定后隐藏 */
+.lyric-win__tools {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+.lyric-win:hover .lyric-win__tools {
+  opacity: 1;
+}
+
+.lyric-win.is-locked .lyric-win__tools {
+  display: none;
+}
+
+.lyric-win__tools .iconbtn {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(245, 239, 224, 0.7);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.lyric-win__tools .iconbtn:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #f5efe0;
+}
+
+/* 静音态：主行用金色强调 */
+.lyric-win.is-muted .lyric-win__curr {
+  color: #e3b23c;
+}

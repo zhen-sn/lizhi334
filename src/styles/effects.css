@@ -1,0 +1,122 @@
+/* ============ 质感与彩蛋特效 ============ */
+
+/* 胶片颗粒 */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme='light'] .grain {
+  opacity: 0.05;
+}
+
+/* 音频可视化 */
+.viz {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 58px;
+}
+.viz i {
+  flex: 1;
+  min-width: 2px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(var(--gold), var(--teal));
+  transition: height 0.09s linear;
+}
+
+/* 南京下雨彩蛋 */
+.rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 98;
+  overflow: hidden;
+}
+.rain i {
+  position: absolute;
+  top: -14%;
+  width: 1px;
+  height: 58px;
+  background: linear-gradient(transparent, rgba(174, 196, 214, 0.55));
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to {
+    transform: translateY(130vh);
+  }
+}
+
+/* 生日彩蛋：金色纸屑 */
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 98;
+  overflow: hidden;
+}
+.confetti i {
+  position: absolute;
+  top: -6%;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  animation: drop linear forwards;
+}
+@keyframes drop {
+  to {
+    transform: translateY(112vh) rotate(760deg);
+  }
+}
+
+/* 页面淡入 */
+.fade {
+  animation: fadein 0.32s var(--ease-out);
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* 封面呼吸（模拟唱片转动） */
+.spin {
+  animation: spin 18s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 悬浮播放球 */
+.orb {
+  position: fixed;
+  right: 18px;
+  bottom: calc(var(--bar-h) + 18px);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  z-index: 60;
+  background: var(--bg-1);
+  border: 1px solid var(--gold-line);
+  box-shadow: var(--shadow-2);
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  cursor: grab;
+  touch-action: none;
+}
+.orb:active {
+  cursor: grabbing;
+}
+@media (max-width: 860px) {
+  /* 底部多了 tab 栏，悬浮球要一起抬高 */
+  .orb {
+    bottom: calc(var(--bar-h) + var(--tab-h) + 18px);
+  }
+}

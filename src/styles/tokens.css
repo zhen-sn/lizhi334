@@ -1,0 +1,121 @@
+/* ============ 设计令牌 ============ */
+:root {
+  color-scheme: dark;
+
+  /* 底层 */
+  --bg: #0d0d0d;
+  --bg-1: #141414;
+  --bg-2: #1a1a1a;
+  --bg-3: #232323;
+  --hover: rgba(255, 255, 255, 0.05);
+  --active: rgba(255, 255, 255, 0.09);
+
+  /* 文字 */
+  --fg: #f2f2f2;
+  --fg-2: #a6a6a6;
+  --fg-3: #6f6f6f;
+
+  /* 线条 */
+  --line: rgba(255, 255, 255, 0.075);
+  --line-2: rgba(255, 255, 255, 0.14);
+
+  /* 主色：极简黑白（变量名沿用 --gold） */
+  --gold: #f2f2f2;
+  --gold-soft: rgba(255, 255, 255, 0.12);
+  --gold-line: rgba(255, 255, 255, 0.34);
+  /* 主色背景上的文字色 */
+  --on-gold: #12141a;
+  --teal: #6ea8a1;
+  --rust: #c05a4c;
+  --violet: #8a7cae;
+
+  /* 尺寸 */
+  --nav-w: 224px;
+  --bar-h: 82px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-full: 999px;
+
+  /* 字体 */
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-serif: 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', Georgia,
+    'Times New Roman', serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  /* 阴影 */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 24px 64px rgba(0, 0, 0, 0.6);
+
+  /* 动画 */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 亮色主题 */
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fafafa;
+  --bg-1: #ffffff;
+  --bg-2: #f1f1f1;
+  --bg-3: #e6e6e6;
+  --hover: rgba(0, 0, 0, 0.045);
+  --active: rgba(0, 0, 0, 0.08);
+
+  --fg: #121212;
+  --fg-2: #5a5a5a;
+  --fg-3: #8a8a8a;
+
+  --line: rgba(0, 0, 0, 0.09);
+  --line-2: rgba(0, 0, 0, 0.16);
+
+  --gold: #141414;
+  --gold-soft: rgba(0, 0, 0, 0.06);
+  --gold-line: rgba(0, 0, 0, 0.3);
+  /* 亮色主题下主色为黑，按钮文字改为白色 */
+  --on-gold: #ffffff;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 24px 64px rgba(0, 0, 0, 0.16);
+}
+
+/* 强调色可切换 */
+[data-accent='teal'] {
+  --gold: #6ea8a1;
+  --gold-soft: rgba(110, 168, 161, 0.14);
+  --gold-line: rgba(110, 168, 161, 0.4);
+  --on-gold: #12141a;
+}
+[data-accent='rust'] {
+  --gold: #c05a4c;
+  --gold-soft: rgba(192, 90, 76, 0.14);
+  --gold-line: rgba(192, 90, 76, 0.4);
+  --on-gold: #12141a;
+}
+[data-accent='violet'] {
+  --gold: #8a7cae;
+  --gold-soft: rgba(138, 124, 174, 0.16);
+  --gold-line: rgba(138, 124, 174, 0.42);
+  --on-gold: #12141a;
+}
+
+/* 歌词字号 */
+:root {
+  --lyric-size: 17px;
+}
+[data-lyric-size='s'] { --lyric-size: 14px; }
+[data-lyric-size='m'] { --lyric-size: 17px; }
+[data-lyric-size='l'] { --lyric-size: 21px; }
+[data-lyric-size='xl'] { --lyric-size: 26px; }
+
+/* 生日模式：把主色推得更亮，配合 data/theme 一起生效 */
+html[data-birthday='1'] {
+  --gold: #f0bd5c;
+  --gold-soft: rgba(240, 189, 92, 0.18);
+  --gold-line: rgba(240, 189, 92, 0.46);
+  --on-gold: #12141a;
+}
