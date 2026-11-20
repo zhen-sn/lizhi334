@@ -1,7 +1,7 @@
 {
   "name": "lizhi-334-player",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "李志 · 叁叁肆 个人音乐播放器（前端优先，数据写死）",
   "main": "electron/main.cjs",

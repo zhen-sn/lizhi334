@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
 import { Modal } from '../components/common/Overlays'
-import { Section, Stat, DemoNotice } from '../components/common/Primitives'
+import { Section, Stat } from '../components/common/Primitives'
 import { profile, facts, faqs } from '../data/bio'
 import { TOUR_TARGET, tourDoneCount, tourProgress } from '../data/tour'
 import { songs, albums } from '../data'
@@ -201,7 +201,7 @@ export default function More() {
       {/* 语录池 */}
       <Section
         title="语录"
-        subtitle="演示文案，正式内容需授权"
+        subtitle="资料文案"
         actions={
           <button className="btn" onClick={() => setQuoteSeed((s) => s + 1)}>
             <Icon name="shuffle" size={15} /> 换一条
@@ -221,7 +221,7 @@ export default function More() {
               className="btn"
               style={{ height: 30 }}
               onClick={() =>
-                copyText(`「${quote.text}」—— ${profile.name}`).then((ok) =>
+                copyText(`「${quote.text}」—— ${quote.source}`).then((ok) =>
                   push(ok ? '已复制到剪贴板' : '复制失败，请手动选取', ok ? 'good' : 'info'),
                 )
               }
@@ -269,18 +269,14 @@ export default function More() {
       <Section title="关于本项目">
         <div className="card card--flat">
           <ul style={{ display: 'grid', gap: 8, fontSize: 13, color: 'var(--fg-2)', paddingLeft: 18 }}>
-            <li>纯前端可运行：不放任何音视频素材也能完整体验 —— 音频走模拟时钟，视频用 Canvas 模拟放映机，歌词为结构占位。</li>
-            <li>想听真实声音：把文件放到 <code className="mono">public/media/audio/&#123;曲目id&#125;.mp3</code>、视频放到 <code className="mono">public/media/video/&#123;视频id&#125;.mp4</code>，并在设置里打开「读取本地媒体」。</li>
-            <li>数据结构即后端契约：<code className="mono">src/data/*</code> 的字段与接口一致，替换成 fetch 即可，页面层不用改。</li>
-            <li>网页与客户端共用同一套代码：后续可用 Tauri / Electron 包壳，仅新增窗口与文件系统集成。</li>
-            <li>所有个人数据只存在浏览器 localStorage（命名空间 lz334:），设置页可一键导出或清空。</li>
+            <li>页面内容由服务器接口提供，曲目、专辑、视频与文案在后台维护后即时生效。</li>
+            <li>想听真实声音：在后台为曲目配置音频地址，或在设置里打开「读取本地媒体」并放入对应文件。</li>
+            <li>收藏、歌单与播放记录保存在浏览器，登录后与服务器账号同步。</li>
+            <li>网页与桌面客户端共用同一套代码，设置页可导出或清空本地数据。</li>
           </ul>
         </div>
       </Section>
-
-      <DemoNotice>
-        本页人物资料、语录、巡演进度、荣誉均为演示占位内容，正式发布前须逐条校订或替换为官方接口数据。
-      </DemoNotice>
+
 
       {offlineOpen && (
         <Modal title="离线曲库" onClose={() => setOfflineOpen(false)} width={520}>

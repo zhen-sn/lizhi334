@@ -4,7 +4,7 @@ import { Cover, CoverStack } from '../components/common/Cover'
 import { Icon } from '../components/common/Icon'
 import { SongList } from '../components/music/SongList'
 import { Modal } from '../components/common/Overlays'
-import { DemoNotice, Empty, PlayAll, Section, Stat, Level } from '../components/common/Primitives'
+import { Empty, PlayAll, Section, Stat, Level } from '../components/common/Primitives'
 import { songMap, songs } from '../data/songs'
 import { albumMap } from '../data/albums'
 import { sheetMap } from '../data/chords'
@@ -294,12 +294,7 @@ export default function PlaylistPage() {
       <Section title="我的其它歌单">
         <PlaylistList onCreate={() => setCreating(true)} />
       </Section>
-
-      <DemoNotice>
-        歌单、收藏与排序全部写在本机 localStorage（命名空间 lz334:）。接入后端后，把{' '}
-        <code className="mono">playlists</code> 换成 <code className="mono">GET /playlists</code>，
-        增删改走 <code className="mono">POST / DELETE</code> 即可，页面结构不用动。
-      </DemoNotice>
+
 
       {/* ---------- 弹层 ---------- */}
       {editing && pl && (

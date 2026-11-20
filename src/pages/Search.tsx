@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
 import { SongList } from '../components/music/SongList'
-import { Section, Tabs, Stat, Empty, DemoNotice, PlayAll, Level } from '../components/common/Primitives'
+import { Section, Tabs, Stat, Empty, PlayAll, Level } from '../components/common/Primitives'
 import { songs, songMap, allCities, allTags } from '../data/songs'
 import { albums, albumMap, albumTypeLabel } from '../data/albums'
 import { videos, videoCategoryLabel } from '../data/videos'
@@ -193,7 +193,7 @@ export default function Search() {
           )}
         </Section>
 
-        <Section title="搜索提示" subtitle="这套前端演示里能搜到的维度">
+        <Section title="搜索提示" subtitle="支持的搜索维度">
           <div className="card card--flat">
             <ul style={{ display: 'grid', gap: 8, fontSize: 13, color: 'var(--fg-2)', paddingLeft: 18 }}>
               <li>歌名关键词：「郑州」「蜻蜓」「Rain」</li>
@@ -408,11 +408,7 @@ export default function Search() {
           </div>
         </div>
       )}
-
-      <DemoNotice>
-        搜索完全在前端内存里完成（对静态数据做包含 + 相关度排序）。接入后端后，把 <code className="mono">hits</code> 的
-        计算换成 <code className="mono">GET /search?q=</code> 即可，页面结构不用改。
-      </DemoNotice>
+
     </div>
   )
 }

@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
-import { DemoNotice, Empty, Section } from '../components/common/Primitives'
+import { Empty, Section } from '../components/common/Primitives'
 import { songs } from '../data/songs'
 import { useAuth } from '../store/auth'
 import { useUi } from '../store/ui'
 import { useUploads, type UploadType } from '../store/uploads'
+import { uploadFile } from '../api/client'
 
 const TYPES: { id: UploadType; label: string; hint: string; icon: 'music' | 'video' | 'film' | 'book' }[] = [
   { id: 'song', label: '歌曲', hint: '音频文件，建议 WAV / FLAC，MP3 也可以', icon: 'music' },
@@ -36,6 +37,7 @@ export default function Upload() {
   const [link, setLink] = useState('')
   const [note, setNote] = useState('')
   const [contact, setContact] = useState('')
+  const [busy, setBusy] = useState(false)
 
   const reset = () => {
     setTitle('')
@@ -46,21 +48,43 @@ export default function Upload() {
     setContact('')
   }
 
-  const submit = () => {
+  const submit = async () => {
+    if (busy) return
     if (!title.trim()) return push('先给这份资源起个名字', 'info')
     if (!file && !link.trim()) return push('请选择文件，或填一个下载链接', 'info')
-    add({
-      type,
-      title: title.trim(),
-      songRef: songRef.trim() || undefined,
-      fileName: file?.name,
-      link: link.trim() || undefined,
-      note: note.trim(),
-      contact: contact.trim() || undefined,
-      author: user?.name,
-    })
-    push('已提交，等我们审核后会整理进库里', 'good')
-    reset()
+    if (!user && !contact.trim()) return push('请先登录，或填写联系方式/署名', 'info')
+
+    setBusy(true)
+    try {
+      let fileUrl: string | undefined
+      let fileName: string | undefined
+      if (file) {
+        const up = await uploadFile(file)
+        fileUrl = up.url
+        fileName = up.fileName
+      }
+      const err = await add({
+        type,
+        title: title.trim(),
+        songRef: songRef.trim() || undefined,
+        fileName,
+        fileUrl,
+        link: link.trim() || undefined,
+        note: note.trim(),
+        contact: contact.trim() || undefined,
+        author: user?.name || contact.trim(),
+      })
+      if (err) {
+        push(err, 'info')
+        return
+      }
+      push('已提交，等我们审核后会整理进库里', 'good')
+      reset()
+    } catch (e) {
+      push(e instanceof Error ? e.message : '提交失败，请稍后重试', 'info')
+    } finally {
+      setBusy(false)
+    }
   }
 
   return (
@@ -140,7 +164,7 @@ export default function Upload() {
                 <span>
                   {file
                     ? `${(file.size / 1048576).toFixed(1)} MB · 点击可重新选择`
-                    : '演示阶段不会真正上传，只记录文件名'}
+                    : '选择后会先上传到服务器，再提交审核'}
                 </span>
               </span>
               <span className="spacer" />
@@ -184,10 +208,10 @@ export default function Upload() {
           </div>
 
           <div className="upfoot">
-            <button className="btn btn--primary" onClick={submit}>
-              <Icon name="upload" size={15} /> 提交资源
+            <button className="btn btn--primary" onClick={submit} disabled={busy}>
+              <Icon name="upload" size={15} /> {busy ? '提交中…' : '提交资源'}
             </button>
-            <button className="btn btn--ghost" onClick={reset}>
+            <button className="btn btn--ghost" onClick={reset} disabled={busy}>
               清空
             </button>
             <div className="spacer" />
@@ -231,7 +255,7 @@ export default function Upload() {
         </aside>
       </div>
 
-      <Section title="我提交的记录" subtitle={`${items.length} 条 · 只存在这台设备上`}>
+      <Section title="我提交的记录" subtitle={`${items.length} 条 · 审核结果会在这里更新`}>
         {items.length ? (
           <div className="uplist">
             {items.map((it) => (
@@ -248,7 +272,14 @@ export default function Upload() {
                   {it.note && <p>{it.note}</p>}
                 </div>
                 <span className="tag">{it.status}</span>
-                <button className="iconbtn" onClick={() => remove(it.id)} aria-label="删除这条记录">
+                <button
+                  className="iconbtn"
+                  onClick={async () => {
+                    const err = await remove(it.id)
+                    if (err) push(err, 'info')
+                  }}
+                  aria-label="撤回这条记录"
+                >
                   <Icon name="trash" size={15} />
                 </button>
               </div>
@@ -258,11 +289,6 @@ export default function Upload() {
           <Empty text="还没有提交过资源" hint="填上面的表单试试，提交后会出现在这里。" />
         )}
       </Section>
-
-      <DemoNotice>
-        上传功能目前只做界面：文件不会真正发送到服务器，提交记录保存在本机。接后端后换成{' '}
-        <code className="mono">POST /uploads</code> 即可。
-      </DemoNotice>
     </div>
   )
 }

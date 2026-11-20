@@ -5,7 +5,7 @@ import { songMap, songsOfAlbum } from '../data/songs'
 import { SongList } from '../components/music/SongList'
 import { Cover } from '../components/common/Cover'
 import { Icon } from '../components/common/Icon'
-import { DemoNotice, Empty, PlayAll } from '../components/common/Primitives'
+import { Empty, PlayAll } from '../components/common/Primitives'
 import { mmss } from '../lib/format'
 import { usePlayer } from '../store/player'
 import { useUi } from '../store/ui'
@@ -21,7 +21,7 @@ export default function AlbumDetail() {
     return (
       <Empty
         text="找不到这张专辑"
-        hint={`地址里的编号「${id}」不在演示库中`}
+        hint={`地址里的编号「${id}」未找到`}
         action={
           <Link to="/songs" className="btn btn--primary">
             回到歌曲页
@@ -75,8 +75,7 @@ export default function AlbumDetail() {
           </div>
         </div>
       </div>
-
-      <DemoNotice>曲目顺序、时长与简介为占位内容，正式版需按唱片内页校订。</DemoNotice>
+
 
       <SongList songs={list} head={false} showAlbum={false} showKey />
 

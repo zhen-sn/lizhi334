@@ -4,7 +4,7 @@ import { sheetMap, chordMap, sheets } from '../data/chords'
 import { songMap, albumMap } from '../data'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
-import { Level, Empty, Section, DemoNotice, Stat, Toggle } from '../components/common/Primitives'
+import { Level, Empty, Section, Stat, Toggle } from '../components/common/Primitives'
 import { ChordDiagram } from '../components/tools/ChordDiagram'
 import { mmss } from '../lib/format'
 import { midiToFreq, parseKey, shiftKey } from '../lib/music'
@@ -12,6 +12,7 @@ import { tone } from '../lib/click'
 import { copyText, download } from '../lib/share'
 import { useUi } from '../store/ui'
 import { useSongActions } from '../hooks/useSongActions'
+import { useSongDetail } from '../hooks/useSongDetail'
 
 /** 移调：支持 D/F# 这类 slash 和弦 */
 function transpose(chord: string, n: number) {
@@ -34,6 +35,7 @@ export default function ChordDetail() {
   const idx = sheets.findIndex((s) => s.songId === songId)
   const prevSheet = idx > 0 ? sheets[idx - 1] : undefined
   const nextSheet = idx >= 0 && idx < sheets.length - 1 ? sheets[idx + 1] : undefined
+  const detailReady = useSongDetail(songId)
 
   const displayKey = useMemo(() => (song ? shiftKey(song.key, shift) : ''), [song, shift])
 
@@ -53,6 +55,24 @@ export default function ChordDetail() {
               </Link>
             )}
           </div>
+        }
+      />
+    )
+  }
+
+  // bootstrap 只下发票面摘要，完整段落在进入详情页时拉取
+  if (!Array.isArray(sheet.sections)) {
+    if (!detailReady) {
+      return <div className="mute" style={{ padding: 32 }}>谱面加载中…</div>
+    }
+    return (
+      <Empty
+        text="谱面内容加载失败"
+        hint="请检查网络后刷新重试。"
+        action={
+          <Link to="/tools/chords" className="btn btn--primary">
+            返回谱库
+          </Link>
         }
       />
     )
@@ -306,10 +326,7 @@ export default function ChordDetail() {
         <Stat value={`${song.bpm}`} label="BPM" />
         <Stat value={mmss(song.duration)} label="时长" />
       </div>
-
-      <DemoNotice>
-        和弦走向、段落与小节数为估算占位，仅供演示排版；请对照官方总谱校订后再对外使用。
-      </DemoNotice>
+
 
       <div className="row" style={{ justifyContent: 'space-between', marginTop: 8 }}>
         {prevSheet ? (

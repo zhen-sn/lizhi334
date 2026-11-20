@@ -1,9 +1,19 @@
 import type { TourCity, TimelineEvent } from './types'
 
-/** 计划总场数：334 城 × 1 场 */
-export const TOUR_TARGET = 334
-export const TOUR_NAME = '叁叁肆'
-export const TOUR_SLOGAN = '334 座城市 · 334 个现场 · 十年'
+/** 计划总场数：334 城 × 1 场（可由 /api/bootstrap 的 tourConfig 覆盖） */
+export let TOUR_TARGET = 334
+export let TOUR_NAME = '叁叁肆'
+export let TOUR_SLOGAN = '334 座城市 · 334 个现场 · 十年'
+
+/** 用后端 tour_config 覆盖标题与目标场数，并重算派生值 */
+export function applyTourConfig(config?: { target?: number; name?: string; slogan?: string } | null) {
+  if (config && typeof config === 'object') {
+    if (typeof config.target === 'number' && config.target > 0) TOUR_TARGET = config.target
+    if (config.name) TOUR_NAME = config.name
+    if (config.slogan) TOUR_SLOGAN = config.slogan
+  }
+  recomputeTour()
+}
 
 /**
  * 演示数据：城市清单。
@@ -71,35 +81,44 @@ RAW.forEach(([province, list]) => {
   })
 })
 
-export const tourDoneCount = tourCities.filter((c) => c.done).length
-export const tourProvinces = Array.from(new Set(tourCities.map((c) => c.province)))
-export const tourProgress = tourDoneCount / TOUR_TARGET
-
 export interface ProvinceGroup {
   province: string
   cities: TourCity[]
   done: number
 }
 
-export const tourByProvince: ProvinceGroup[] = tourProvinces
-  .map((p) => {
-    const cities = tourCities.filter((c) => c.province === p)
-    return {
-      province: p,
-      cities,
-      done: cities.filter((c) => c.done).length,
-    }
-  })
-  .sort((a, b) => b.done - a.done || b.cities.length - a.cities.length)
+export let tourDoneCount = 0
+export let tourProvinces: string[] = []
+export let tourProgress = 0
+export let tourByProvince: ProvinceGroup[] = []
+export let tourYears: number[] = []
 
-export const tourYears = Array.from(
-  new Set(tourCities.filter((c) => c.done).map((c) => c.year)),
-).sort()
+/** 城市数据被后端覆盖后调用，重算全部派生值 */
+export function recomputeTour() {
+  tourDoneCount = tourCities.filter((c) => c.done).length
+  tourProvinces = Array.from(new Set(tourCities.map((c) => c.province)))
+  tourProgress = tourDoneCount / TOUR_TARGET
+  tourByProvince = tourProvinces
+    .map((p) => {
+      const cities = tourCities.filter((c) => c.province === p)
+      return {
+        province: p,
+        cities,
+        done: cities.filter((c) => c.done).length,
+      }
+    })
+    .sort((a, b) => b.done - a.done || b.cities.length - a.cities.length)
+  tourYears = Array.from(
+    new Set(tourCities.filter((c) => c.done).map((c) => c.year)),
+  ).sort()
+}
+
+recomputeTour()
 
 export const citiesInYear = (year: number) =>
   tourCities.filter((c) => c.done && c.year === year)
 
-/** 大事记（演示占位，需校订） */
+/** 大事记 */
 export const timeline: TimelineEvent[] = [
   { date: '2004', year: 2004, kind: 'album', title: '首张自制版本发行', text: '词曲、录音、封面、售卖全部一人完成，开始在网络上流通。' },
   { date: '2007', year: 2007, kind: 'album', title: '乐队化编曲确立', text: '从「一个人加一把吉他」转向完整乐队编制，长段落反复吟唱成为标志。' },
@@ -111,5 +130,5 @@ export const timeline: TimelineEvent[] = [
   { date: '2019', year: 2019, kind: 'tour', title: '累计破百场', text: '推出巡演途中录制的现场辑。' },
   { date: '2020', year: 2020, kind: 'other', title: '线下暂停期', text: '演出停摆，转向线上直播与排练室内容。' },
   { date: '2021', year: 2021, kind: 'tour', title: '恢复巡演 · 转向更小场地', text: '补齐西北、华北、东北多个此前未覆盖的省份。' },
-  { date: '至今', year: 2026, kind: 'tour', title: `已完成 ${tourDoneCount} / ${TOUR_TARGET}`, text: '本页面数据为演示占位，实际进度以官方公布为准。' },
+  { date: '至今', year: 2026, kind: 'tour', title: `已完成 ${tourDoneCount} / ${TOUR_TARGET}`, text: '进度按本站已收录的场次统计，实际情况以官方公布为准。' },
 ]

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
 import { SongList } from '../components/music/SongList'
-import { DemoNotice, Empty, Level, Section, Stat } from '../components/common/Primitives'
+import { Empty, Level, Section, Stat } from '../components/common/Primitives'
 import { songMap, songs } from '../data/songs'
 import { albumMap } from '../data/albums'
 import { sheetMap } from '../data/chords'
@@ -213,10 +213,6 @@ export default function Random() {
         <Empty text="还没有摇过" hint="点「摇一首」试试运气。" />
       )}
 
-      <DemoNotice>
-        随机只从本地曲库里挑，不涉及任何推荐算法。接后端后可以把随机逻辑换成{' '}
-        <code className="mono">GET /songs/random</code>，页面结构不用改。
-      </DemoNotice>
     </div>
   )
 }

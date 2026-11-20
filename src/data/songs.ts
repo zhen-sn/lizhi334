@@ -118,12 +118,20 @@ export const songsOfAlbum = (albumId: string) =>
   songs.filter((s) => s.albumId === albumId)
 
 /** 全部标签（去掉 instrumental 之类的内部标记由页面自行过滤） */
-export const allTags = Array.from(new Set(songs.flatMap((s) => s.tags)))
+export const allTags: string[] = []
 
 /** 城市聚合 */
-export const allCities = Array.from(
-  new Set(songs.map((s) => s.city).filter(Boolean) as string[]),
-)
+export const allCities: string[] = []
+
+/** 曲目被后端覆盖后，重算标签与城市聚合（原地更新，页面引用保持有效） */
+export function recomputeSongFacets() {
+  const tags = Array.from(new Set(songs.flatMap((s) => s.tags)))
+  allTags.splice(0, allTags.length, ...tags)
+  const cities = Array.from(new Set(songs.map((s) => s.city).filter(Boolean) as string[]))
+  allCities.splice(0, allCities.length, ...cities)
+}
+
+recomputeSongFacets()
 
 /** 主题分类：用于「歌曲」页的分类标签 */
 export const categories: { key: string; label: string; desc: string }[] = [

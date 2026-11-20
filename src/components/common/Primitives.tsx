@@ -45,19 +45,6 @@ export function Empty({ text = '这里还是空的', hint, action }: { text?: st
   )
 }
 
-export function DemoNotice({ children }: { children?: ReactNode }) {
-  return (
-    <div className="notice">
-      <Icon name="info" size={16} />
-      <div>
-        <b>演示数据</b> ·{' '}
-        {children ??
-          '本页曲目、专辑、年份、BPM、调性、歌词、人物资料均为前端占位内容，用于验证交互与排版，正式使用前需人工校订或接入后端接口。'}
-      </div>
-    </div>
-  )
-}
-
 export function Chips<T extends string>({
   items,
   value,

@@ -5,7 +5,7 @@ import { Cover } from '../components/common/Cover'
 import { Slider } from '../components/common/Slider'
 import { Lyrics, useSongLyric } from '../components/lyrics/Lyrics'
 import { Visualizer } from '../components/player/Visualizer'
-import { Tabs, Level, DemoNotice, Empty } from '../components/common/Primitives'
+import { Tabs, Level, Empty } from '../components/common/Primitives'
 import { Modal } from '../components/common/Overlays'
 import { songMap, songsOfAlbum, songs as allSongs } from '../data/songs'
 import { albumMap } from '../data/albums'
@@ -19,6 +19,7 @@ import { useSettings } from '../store/settings'
 import { useLibrary } from '../store/library'
 import { useUi } from '../store/ui'
 import { useSongActions } from '../hooks/useSongActions'
+import { useSongDetail } from '../hooks/useSongDetail'
 import type { Song } from '../data/types'
 
 type Tab = 'lyric' | 'sheet' | 'info' | 'queue'
@@ -45,6 +46,7 @@ export default function PlayerPage() {
   const song = p.currentId ? songMap[p.currentId] : undefined
   const album = song ? albumMap[song.albumId] : undefined
   const sheet = song ? sheetMap[song.id] : undefined
+  const detailReady = useSongDetail(song?.id)
   const pal = song ? coverPalette(song.title) : undefined
   const duration = p.duration || song?.duration || 0
 
@@ -253,7 +255,7 @@ export default function PlayerPage() {
           <Tabs
             items={[
               { key: 'lyric', label: '歌词' },
-              { key: 'sheet', label: '和弦', count: sheet ? sheet.sections.length : 0 },
+              { key: 'sheet', label: '和弦', count: sheet?.sections?.length ?? 0 },
               { key: 'info', label: '信息' },
               { key: 'queue', label: '队列', count: p.queue.length },
             ]}
@@ -264,7 +266,31 @@ export default function PlayerPage() {
           {tab === 'lyric' && <Lyrics song={song} time={p.time} onSeek={(t) => p.seek(t)} height="46vh" />}
 
           {tab === 'sheet' &&
-            (sheet ? (
+            (!sheet ? (
+              <Empty
+                text="这首歌还没有谱"
+                hint="曲库里已录入和弦谱的曲目会在工具页标出。"
+                action={
+                  <Link to="/tools/chords" className="btn btn--primary">
+                    去谱库看看
+                  </Link>
+                }
+              />
+            ) : !detailReady ? (
+              <div className="mute" style={{ padding: 32 }}>
+                谱面加载中…
+              </div>
+            ) : !Array.isArray(sheet.sections) ? (
+              <Empty
+                text="谱面内容加载失败"
+                hint="请检查网络后刷新重试。"
+                action={
+                  <Link to="/tools/chords" className="btn btn--primary">
+                    去谱库看看
+                  </Link>
+                }
+              />
+            ) : (
               <div className="card card--flat">
                 <div className="row" style={{ marginBottom: 12, flexWrap: 'wrap', gap: 10 }}>
                   <span className="tag mono">{sheet.tuning}</span>
@@ -290,19 +316,8 @@ export default function PlayerPage() {
                       ))}
                     </div>
                   </div>
-                ))}
-                <DemoNotice>谱面只给出和弦走向，不收录歌词文本；请在本地填自己已授权的词。</DemoNotice>
+                ))}
               </div>
-            ) : (
-              <Empty
-                text="这首歌还没有谱"
-                hint="曲库里已录入和弦谱的曲目会在工具页标出。"
-                action={
-                  <Link to="/tools/chords" className="btn btn--primary">
-                    去谱库看看
-                  </Link>
-                }
-              />
             ))}
 
           {tab === 'info' && (
@@ -340,7 +355,7 @@ export default function PlayerPage() {
                 </div>
               )}
               <div className="fact">
-                <span>演示播放量</span>
+                <span>播放量</span>
                 <b className="mono">{song.playCount}</b>
               </div>
               <div className="row" style={{ gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
@@ -494,8 +509,7 @@ export default function PlayerPage() {
               </Link>
             </div>
           </div>
-
-          <DemoNotice>本页参数（BPM / 调性 / 难度）为占位估算，接入后端后由校订数据替换。</DemoNotice>
+
         </aside>
       </div>
 
@@ -548,7 +562,7 @@ function ShareModal({ songId, onClose }: { songId: string; onClose: () => void }
         maxLength={40}
       />
       <p className="mute" style={{ fontSize: 12, marginTop: 10 }}>
-        歌词为结构占位文本，正式版本只会渲染已授权内容；也可以直接写自己的话。
+        也可以直接写自己的话，留空则使用当前这一句歌词。
       </p>
     </Modal>
   )

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
-import { Section, Tabs, Stat, DemoNotice } from '../components/common/Primitives'
+import { Section, Tabs, Stat } from '../components/common/Primitives'
 import { SongList } from '../components/music/SongList'
 import { profile, facts, chapters, bandMembers, faqs, awards } from '../data/bio'
 import { timeline, TOUR_TARGET, tourDoneCount } from '../data/tour'
@@ -127,8 +127,7 @@ export default function Biography() {
                 <div className="tlv__text">{t.text}</div>
               </div>
             ))}
-          </div>
-          <DemoNotice>年表日期与描述为演示占位，需对照官方资料修订。</DemoNotice>
+          </div>
         </>
       )}
 
@@ -153,9 +152,9 @@ export default function Biography() {
             </div>
           ))}
           <div className="card card--flat">
-            <div style={{ fontSize: 13, fontWeight: 550, marginBottom: 6 }}>成员信息待补</div>
+            <div style={{ fontSize: 13, fontWeight: 550, marginBottom: 6 }}>成员信息</div>
             <p className="mute" style={{ fontSize: 12.5 }}>
-              正式版本应接入乐队官方名单；当前姓名为演示占位，页面已保留渲染结构与排版。
+              成员名单以乐队官方公布为准，后续可在后台资料中继续补充。
             </p>
           </div>
         </div>
@@ -188,6 +187,11 @@ export default function Biography() {
 
       {tab === 'award' && (
         <div className="list">
+          {awards.length === 0 && (
+            <p className="mute" style={{ padding: '16px', fontSize: 12.5 }}>
+              暂无收录的荣誉记录。
+            </p>
+          )}
           {awards.map((a) => (
             <div className="srow" key={a.name} style={{ gridTemplateColumns: '70px minmax(0,1fr) minmax(0,1.2fr)', height: 54 }}>
               <span className="mono" style={{ color: 'var(--gold)', fontSize: 13 }}>

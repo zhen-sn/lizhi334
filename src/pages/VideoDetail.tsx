@@ -5,7 +5,7 @@ import { getSong } from '../data/songs'
 import { Stage } from '../components/video/Stage'
 import { Cover } from '../components/common/Cover'
 import { Icon } from '../components/common/Icon'
-import { DemoNotice, Empty, Section } from '../components/common/Primitives'
+import { Empty, Section } from '../components/common/Primitives'
 import { CommentSection } from '../components/comments/CommentSection'
 import { mmss, playCount } from '../lib/format'
 import { copyText } from '../lib/share'
@@ -25,7 +25,7 @@ export default function VideoDetail() {
     return (
       <Empty
         text="找不到这条影像"
-        hint={`编号「${id}」不在演示库里`}
+        hint={`编号「${id}」未找到`}
         action={
           <Link to="/videos" className="btn btn--primary">
             返回影像列表
@@ -97,7 +97,7 @@ export default function VideoDetail() {
           <Section title="影像说明">
             <p className="dim" style={{ fontSize: 13.5, lineHeight: 1.9, maxWidth: 720 }}>
               {v.description ||
-                '演示文案：这里应放一段影像说明——拍摄于哪一轮巡演、机位与收音方式、与录音室版本的差别。正式内容请由后台字段填充。'}
+                '暂无影像说明。'}
             </p>
             <p className="dim" style={{ fontSize: 13.5, lineHeight: 1.9, maxWidth: 720, marginTop: 10 }}>
               当前页面在没有 mp4 素材时会运行 Canvas 模拟放映机：光锥、灰尘、划痕与进度计时都是前端生成，
@@ -105,10 +105,7 @@ export default function VideoDetail() {
               即自动切换为真实视频，加载失败还会回落到模拟模式，不会出现黑屏。
             </p>
           </Section>
-
-          <DemoNotice>
-            影像标题、城市、年份与播放量为占位数据，需人工校订；本站不内置任何受版权保护的音视频文件。
-          </DemoNotice>
+
 
           <CommentSection target={`video:${v.id}`} />
 

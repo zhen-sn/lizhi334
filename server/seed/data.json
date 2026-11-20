@@ -1,0 +1,5244 @@
+{
+    "albums": [
+        {
+            "id": "a01",
+            "name": "被解放的欲望",
+            "year": 2004,
+            "date": "2004",
+            "type": "studio",
+            "description": "早期自制版本，编曲粗粝，词作已显露出对城市与个体的持续注视。共 6 首。",
+            "songIds": [
+                "s01",
+                "s02",
+                "s03",
+                "s04",
+                "s05",
+                "s06"
+            ]
+        },
+        {
+            "id": "a02",
+            "name": "在劫难逃",
+            "year": 2005,
+            "date": "2005",
+            "type": "studio",
+            "description": "城市叙事开始成形的阶段，木吉他与口琴的比重明显下降。共 6 首。",
+            "songIds": [
+                "s07",
+                "s08",
+                "s09",
+                "s10",
+                "s11",
+                "s12"
+            ]
+        },
+        {
+            "id": "a03",
+            "name": "梵高先生",
+            "year": 2007,
+            "date": "2007",
+            "type": "studio",
+            "description": "确立乐队化编曲的一张，长段落与反复吟唱成为标志。共 7 首。",
+            "songIds": [
+                "s13",
+                "s14",
+                "s15",
+                "s16",
+                "s17",
+                "s18",
+                "s19"
+            ]
+        },
+        {
+            "id": "a04",
+            "name": "你好，郑州",
+            "year": 2009,
+            "date": "2009",
+            "type": "studio",
+            "description": "以城市为线索的集中写作期，多地现场曲目取自这一阶段。共 7 首。",
+            "songIds": [
+                "s20",
+                "s21",
+                "s22",
+                "s23",
+                "s24",
+                "s25",
+                "s26"
+            ]
+        },
+        {
+            "id": "a05",
+            "name": "1701",
+            "year": 2011,
+            "date": "2011",
+            "type": "studio",
+            "description": "录音室制作最完整的一张，乐队合奏与动态层次显著增强。共 6 首。",
+            "songIds": [
+                "s27",
+                "s28",
+                "s29",
+                "s30",
+                "s31",
+                "s32"
+            ]
+        },
+        {
+            "id": "a06",
+            "name": "山阴路的夏天",
+            "year": 2011,
+            "date": "2011",
+            "type": "ep",
+            "description": "南京题材短辑，街道名成为地理坐标。共 3 首。",
+            "songIds": [
+                "s33",
+                "s34",
+                "s35"
+            ]
+        },
+        {
+            "id": "a07",
+            "name": "定西",
+            "year": 2012,
+            "date": "2012",
+            "type": "ep",
+            "description": "回到西北故乡的写作，编曲回到极简配置。共 3 首。",
+            "songIds": [
+                "s36",
+                "s37",
+                "s38"
+            ]
+        },
+        {
+            "id": "a08",
+            "name": "热河",
+            "year": 2014,
+            "date": "2014",
+            "type": "studio",
+            "description": "巡演前最后一张录音室专辑，旋律线更开放。共 5 首。",
+            "songIds": [
+                "s39",
+                "s40",
+                "s41",
+                "s42",
+                "s43"
+            ]
+        },
+        {
+            "id": "a09",
+            "name": "叁叁肆 · 现场辑",
+            "year": 2019,
+            "date": "2019",
+            "type": "live",
+            "description": "叁叁肆巡演途中录制的现场版本合集。共 8 首。",
+            "songIds": [
+                "s44",
+                "s45",
+                "s46",
+                "s47",
+                "s48",
+                "s49",
+                "s50",
+                "s51"
+            ]
+        },
+        {
+            "id": "a10",
+            "name": "散佚与单曲",
+            "year": 2016,
+            "date": "2006—2016",
+            "type": "single",
+            "description": "未收录进正式专辑的单曲、影视歌曲与再版曲目。共 5 首。",
+            "songIds": [
+                "s52",
+                "s53",
+                "s54",
+                "s55",
+                "s56"
+            ]
+        }
+    ],
+    "songs": [
+        {
+            "id": "s01",
+            "title": "被解放的欲望",
+            "albumId": "a01",
+            "duration": 372,
+            "bpm": 92,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "早期",
+                "摇滚"
+            ],
+            "playCount": 18420,
+            "year": 2004,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s02",
+            "title": "这个庸俗的人",
+            "albumId": "a01",
+            "duration": 268,
+            "bpm": 108,
+            "key": "Am",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "早期",
+                "弹唱友好"
+            ],
+            "playCount": 12604,
+            "year": 2004,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s03",
+            "title": "Rain",
+            "albumId": "a01",
+            "duration": 240,
+            "bpm": 118,
+            "key": "Dm",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "早期",
+                "instrumental"
+            ],
+            "playCount": 9312,
+            "year": 2004,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s04",
+            "title": "十三号当铺",
+            "albumId": "a01",
+            "duration": 315,
+            "bpm": 88,
+            "key": "Em",
+            "capo": 1,
+            "difficulty": 3,
+            "tags": [
+                "早期",
+                "南京"
+            ],
+            "playCount": 21083,
+            "year": 2004,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s05",
+            "title": "四手联弹",
+            "albumId": "a01",
+            "duration": 226,
+            "bpm": 96,
+            "key": "C",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "早期",
+                "冷门"
+            ],
+            "playCount": 5120,
+            "year": 2004,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s06",
+            "title": "墙",
+            "albumId": "a01",
+            "duration": 298,
+            "bpm": 84,
+            "key": "Bm",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "早期",
+                "摇滚"
+            ],
+            "playCount": 33417,
+            "year": 2004,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s07",
+            "title": "在劫难逃",
+            "albumId": "a02",
+            "duration": 305,
+            "bpm": 126,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "摇滚"
+            ],
+            "playCount": 26891,
+            "year": 2005,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s08",
+            "title": "你是什么随便你吧",
+            "albumId": "a02",
+            "duration": 242,
+            "bpm": 100,
+            "key": "Am",
+            "capo": 3,
+            "difficulty": 2,
+            "tags": [
+                "弹唱友好"
+            ],
+            "playCount": 41028,
+            "year": 2005,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s09",
+            "title": "天空之城",
+            "albumId": "a02",
+            "duration": 316,
+            "bpm": 76,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "精选",
+                "弹唱友好"
+            ],
+            "playCount": 412660,
+            "year": 2005,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s10",
+            "title": "工体爱情故事",
+            "albumId": "a02",
+            "duration": 349,
+            "bpm": 92,
+            "key": "G",
+            "capo": 2,
+            "difficulty": 3,
+            "tags": [
+                "北京"
+            ],
+            "playCount": 88210,
+            "year": 2005,
+            "city": "北京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s11",
+            "title": "翁庆年的钟水饺",
+            "albumId": "a02",
+            "duration": 262,
+            "bpm": 112,
+            "key": "C",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "南京",
+                "弹唱友好"
+            ],
+            "playCount": 65340,
+            "year": 2005,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s12",
+            "title": "蜻蜓",
+            "albumId": "a02",
+            "duration": 228,
+            "bpm": 120,
+            "key": "D",
+            "capo": 1,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 14205,
+            "year": 2005,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s13",
+            "title": "梵高先生",
+            "albumId": "a03",
+            "duration": 405,
+            "bpm": 74,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "精选",
+                "摇滚"
+            ],
+            "playCount": 356112,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s14",
+            "title": "和你在一起",
+            "albumId": "a03",
+            "duration": 358,
+            "bpm": 80,
+            "key": "G",
+            "capo": 3,
+            "difficulty": 2,
+            "tags": [
+                "精选",
+                "弹唱友好"
+            ],
+            "playCount": 298004,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s15",
+            "title": "关于你",
+            "albumId": "a03",
+            "duration": 291,
+            "bpm": 88,
+            "key": "D",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "民谣"
+            ],
+            "playCount": 72480,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s16",
+            "title": "铅笔",
+            "albumId": "a03",
+            "duration": 320,
+            "bpm": 96,
+            "key": "A",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "民谣"
+            ],
+            "playCount": 58120,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s17",
+            "title": "猫",
+            "albumId": "a03",
+            "duration": 274,
+            "bpm": 104,
+            "key": "E",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 27031,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s18",
+            "title": "入梦",
+            "albumId": "a03",
+            "duration": 236,
+            "bpm": 72,
+            "key": "Bm",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "民谣"
+            ],
+            "playCount": 19440,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s19",
+            "title": "这个世界会好吗",
+            "albumId": "a03",
+            "duration": 400,
+            "bpm": 68,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "精选"
+            ],
+            "playCount": 264870,
+            "year": 2007,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s20",
+            "title": "你好，郑州",
+            "albumId": "a04",
+            "duration": 356,
+            "bpm": 90,
+            "key": "C",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "郑州",
+                "精选"
+            ],
+            "playCount": 175420,
+            "year": 2009,
+            "city": "郑州",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s21",
+            "title": "关于郑州的记忆",
+            "albumId": "a04",
+            "duration": 401,
+            "bpm": 76,
+            "key": "G",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "精选",
+                "郑州"
+            ],
+            "playCount": 486301,
+            "year": 2009,
+            "city": "郑州",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s22",
+            "title": "杭州",
+            "albumId": "a04",
+            "duration": 370,
+            "bpm": 82,
+            "key": "D",
+            "capo": 1,
+            "difficulty": 3,
+            "tags": [
+                "杭州"
+            ],
+            "playCount": 214530,
+            "year": 2009,
+            "city": "杭州",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s23",
+            "title": "西单女孩",
+            "albumId": "a04",
+            "duration": 334,
+            "bpm": 98,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "北京"
+            ],
+            "playCount": 68215,
+            "year": 2009,
+            "city": "北京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s24",
+            "title": "上张村",
+            "albumId": "a04",
+            "duration": 288,
+            "bpm": 86,
+            "key": "A",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 16380,
+            "year": 2009,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s25",
+            "title": "流芳",
+            "albumId": "a04",
+            "duration": 312,
+            "bpm": 80,
+            "key": "Bm",
+            "capo": 2,
+            "difficulty": 3,
+            "tags": [
+                "民谣"
+            ],
+            "playCount": 23904,
+            "year": 2009,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s26",
+            "title": "七百年",
+            "albumId": "a04",
+            "duration": 350,
+            "bpm": 78,
+            "key": "E",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "摇滚"
+            ],
+            "playCount": 44120,
+            "year": 2009,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s27",
+            "title": "一七零一",
+            "albumId": "a05",
+            "duration": 296,
+            "bpm": 108,
+            "key": "D",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "南京"
+            ],
+            "playCount": 92044,
+            "year": 2011,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s28",
+            "title": "人民不需要自由",
+            "albumId": "a05",
+            "duration": 328,
+            "bpm": 84,
+            "key": "G",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "精选",
+                "弹唱友好"
+            ],
+            "playCount": 233150,
+            "year": 2011,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s29",
+            "title": "丁丁张",
+            "albumId": "a05",
+            "duration": 306,
+            "bpm": 100,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "民谣"
+            ],
+            "playCount": 51260,
+            "year": 2011,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s30",
+            "title": "索尔",
+            "albumId": "a05",
+            "duration": 342,
+            "bpm": 76,
+            "key": "Em",
+            "capo": 1,
+            "difficulty": 3,
+            "tags": [
+                "摇滚"
+            ],
+            "playCount": 37908,
+            "year": 2011,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s31",
+            "title": "飞鸟",
+            "albumId": "a05",
+            "duration": 268,
+            "bpm": 112,
+            "key": "C",
+            "capo": 3,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 18027,
+            "year": 2011,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s32",
+            "title": "苍井空",
+            "albumId": "a05",
+            "duration": 334,
+            "bpm": 94,
+            "key": "F",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "话题"
+            ],
+            "playCount": 129640,
+            "year": 2011,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s33",
+            "title": "山阴路的夏天",
+            "albumId": "a06",
+            "duration": 358,
+            "bpm": 78,
+            "key": "G",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "精选",
+                "南京",
+                "弹唱友好"
+            ],
+            "playCount": 388204,
+            "year": 2011,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s34",
+            "title": "你离开了南京，从此没有人和我说话",
+            "albumId": "a06",
+            "duration": 412,
+            "bpm": 72,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "精选",
+                "南京"
+            ],
+            "playCount": 402166,
+            "year": 2011,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s35",
+            "title": "关于你两件事",
+            "albumId": "a06",
+            "duration": 344,
+            "bpm": 88,
+            "key": "D",
+            "capo": 2,
+            "difficulty": 3,
+            "tags": [
+                "南京"
+            ],
+            "playCount": 46310,
+            "year": 2011,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s36",
+            "title": "定西",
+            "albumId": "a07",
+            "duration": 412,
+            "bpm": 70,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "精选",
+                "西北"
+            ],
+            "playCount": 315780,
+            "year": 2012,
+            "city": "定西",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s37",
+            "title": "陇西",
+            "albumId": "a07",
+            "duration": 320,
+            "bpm": 82,
+            "key": "Em",
+            "capo": 1,
+            "difficulty": 3,
+            "tags": [
+                "西北"
+            ],
+            "playCount": 42318,
+            "year": 2012,
+            "city": "定西",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s38",
+            "title": "黄河边",
+            "albumId": "a07",
+            "duration": 296,
+            "bpm": 88,
+            "key": "D",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "西北",
+                "冷门"
+            ],
+            "playCount": 21044,
+            "year": 2012,
+            "city": "定西",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s39",
+            "title": "热河",
+            "albumId": "a08",
+            "duration": 386,
+            "bpm": 76,
+            "key": "G",
+            "capo": 2,
+            "difficulty": 3,
+            "tags": [
+                "精选",
+                "弹唱友好"
+            ],
+            "playCount": 342906,
+            "year": 2014,
+            "city": "承德",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s40",
+            "title": "山阴路的冬天",
+            "albumId": "a08",
+            "duration": 344,
+            "bpm": 74,
+            "key": "Bm",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "南京"
+            ],
+            "playCount": 118230,
+            "year": 2014,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s41",
+            "title": "关于南京的三件事",
+            "albumId": "a08",
+            "duration": 368,
+            "bpm": 80,
+            "key": "C",
+            "capo": 1,
+            "difficulty": 3,
+            "tags": [
+                "南京"
+            ],
+            "playCount": 96450,
+            "year": 2014,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s42",
+            "title": "夹江",
+            "albumId": "a08",
+            "duration": 280,
+            "bpm": 92,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 17206,
+            "year": 2014,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s43",
+            "title": "三花",
+            "albumId": "a08",
+            "duration": 254,
+            "bpm": 104,
+            "key": "A",
+            "capo": 3,
+            "difficulty": 2,
+            "tags": [
+                "冷门"
+            ],
+            "playCount": 12483,
+            "year": 2014,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s44",
+            "title": "天空之城 (叁叁肆现场)",
+            "albumId": "a09",
+            "duration": 372,
+            "bpm": 76,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 156420,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s45",
+            "title": "你离开了南京，从此没有人和我说话 (现场)",
+            "albumId": "a09",
+            "duration": 430,
+            "bpm": 72,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 132870,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s46",
+            "title": "热河 (现场)",
+            "albumId": "a09",
+            "duration": 402,
+            "bpm": 76,
+            "key": "G",
+            "capo": 2,
+            "difficulty": 3,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 121004,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s47",
+            "title": "关于郑州的记忆 (现场)",
+            "albumId": "a09",
+            "duration": 418,
+            "bpm": 76,
+            "key": "G",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 164320,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s48",
+            "title": "梵高先生 (现场)",
+            "albumId": "a09",
+            "duration": 424,
+            "bpm": 74,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 109876,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s49",
+            "title": "山阴路的夏天 (现场)",
+            "albumId": "a09",
+            "duration": 370,
+            "bpm": 78,
+            "key": "G",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 98210,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s50",
+            "title": "这个世界会好吗 (现场)",
+            "albumId": "a09",
+            "duration": 436,
+            "bpm": 68,
+            "key": "Am",
+            "capo": 0,
+            "difficulty": 4,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 87650,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s51",
+            "title": "人民不需要自由 (现场)",
+            "albumId": "a09",
+            "duration": 340,
+            "bpm": 84,
+            "key": "G",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "现场"
+            ],
+            "playCount": 76430,
+            "year": 2019,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s52",
+            "title": "这个周末",
+            "albumId": "a10",
+            "duration": 300,
+            "bpm": 110,
+            "key": "D",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "单曲",
+                "弹唱友好"
+            ],
+            "playCount": 34210,
+            "year": 2016,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s53",
+            "title": "沟",
+            "albumId": "a10",
+            "duration": 288,
+            "bpm": 96,
+            "key": "Em",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "单曲",
+                "南京"
+            ],
+            "playCount": 28904,
+            "year": 2016,
+            "city": "南京",
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s54",
+            "title": "1999",
+            "albumId": "a10",
+            "duration": 356,
+            "bpm": 92,
+            "key": "E",
+            "capo": 0,
+            "difficulty": 3,
+            "tags": [
+                "单曲"
+            ],
+            "playCount": 41320,
+            "year": 2016,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s55",
+            "title": "雨停以后",
+            "albumId": "a10",
+            "duration": 272,
+            "bpm": 70,
+            "key": "C",
+            "capo": 2,
+            "difficulty": 2,
+            "tags": [
+                "单曲",
+                "冷门"
+            ],
+            "playCount": 15620,
+            "year": 2016,
+            "audioUrl": "",
+            "lyrics": ""
+        },
+        {
+            "id": "s56",
+            "title": "Apart",
+            "albumId": "a10",
+            "duration": 246,
+            "bpm": 118,
+            "key": "Bm",
+            "capo": 0,
+            "difficulty": 2,
+            "tags": [
+                "单曲",
+                "instrumental"
+            ],
+            "playCount": 9840,
+            "year": 2016,
+            "audioUrl": "",
+            "lyrics": ""
+        }
+    ],
+    "videos": [
+        {
+            "id": "v01",
+            "title": "叁叁肆 · 第 100 场 开场纪录",
+            "category": "documentary",
+            "duration": 612,
+            "year": 2019,
+            "views": 214530,
+            "city": "成都",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v02",
+            "title": "山阴路的夏天 · 现场",
+            "category": "live",
+            "duration": 358,
+            "year": 2018,
+            "views": 186420,
+            "city": "南京",
+            "relatedSongId": "s33",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v03",
+            "title": "你离开了南京，从此没有人和我说话 · 现场",
+            "category": "live",
+            "duration": 425,
+            "year": 2019,
+            "views": 302180,
+            "city": "南京",
+            "relatedSongId": "s45",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v04",
+            "title": "关于郑州的记忆 · MV",
+            "category": "mv",
+            "duration": 401,
+            "year": 2015,
+            "views": 421660,
+            "city": "郑州",
+            "relatedSongId": "s21",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v05",
+            "title": "热河 · 现场",
+            "category": "live",
+            "duration": 399,
+            "year": 2017,
+            "views": 145230,
+            "city": "承德",
+            "relatedSongId": "s39",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v06",
+            "title": "梵高先生 · 排练室",
+            "category": "behind",
+            "duration": 526,
+            "year": 2018,
+            "views": 68940,
+            "city": "南京",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v07",
+            "title": "定西 · 回家路上（巡演花絮）",
+            "category": "documentary",
+            "duration": 738,
+            "year": 2019,
+            "views": 92100,
+            "city": "定西",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v08",
+            "title": "天空之城 · 万人合唱",
+            "category": "live",
+            "duration": 336,
+            "year": 2019,
+            "views": 388720,
+            "city": "武汉",
+            "relatedSongId": "s44",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v09",
+            "title": "这个世界会好吗 · 现场",
+            "category": "live",
+            "duration": 441,
+            "year": 2018,
+            "views": 121450,
+            "city": "西安",
+            "relatedSongId": "s50",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v10",
+            "title": "乐队成员的一天",
+            "category": "behind",
+            "duration": 864,
+            "year": 2020,
+            "views": 45210,
+            "city": "南京",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v11",
+            "title": "人民不需要自由 · 现场",
+            "category": "live",
+            "duration": 344,
+            "year": 2019,
+            "views": 176300,
+            "city": "重庆",
+            "relatedSongId": "s51",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v12",
+            "title": "你好，郑州 · 城市影像",
+            "category": "mv",
+            "duration": 356,
+            "year": 2016,
+            "views": 98760,
+            "city": "郑州",
+            "relatedSongId": "s20",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v13",
+            "title": "巡演路上的 334 个夜晚",
+            "category": "documentary",
+            "duration": 1102,
+            "year": 2021,
+            "views": 231400,
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v14",
+            "title": "彩排：调音与试声",
+            "category": "behind",
+            "duration": 415,
+            "year": 2019,
+            "views": 28930,
+            "city": "南京",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v15",
+            "title": "杭州 · 现场",
+            "category": "live",
+            "duration": 372,
+            "year": 2018,
+            "views": 156800,
+            "city": "杭州",
+            "relatedSongId": "s22",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        },
+        {
+            "id": "v16",
+            "title": "和弦教学：天空之城",
+            "category": "behind",
+            "duration": 690,
+            "year": 2020,
+            "views": 214650,
+            "city": "南京",
+            "relatedSongId": "s09",
+            "videoUrl": "",
+            "poster": "",
+            "description": ""
+        }
+    ],
+    "quotes": [
+        {
+            "text": "一首歌被反复唱到第两百遍，它就不再只属于作者了。",
+            "source": "本站文案 · 现场"
+        },
+        {
+            "text": "城市是一条一条的路，路上是一个一个的人。",
+            "source": "本站文案 · 城市主题"
+        },
+        {
+            "text": "现场的意义，是让一群人同时承认同一件事。",
+            "source": "本站文案 · 现场"
+        },
+        {
+            "text": "比起口号，这些歌更愿意写路过的地方。",
+            "source": "本站文案 · 城市主题"
+        },
+        {
+            "text": "三千三百四十，是一个不太可能、但值得每天醒来的数字。",
+            "source": "本站文案 · 巡演"
+        },
+        {
+            "text": "当台下唱得比台上熟，歌就交出去了。",
+            "source": "本站文案 · 现场"
+        },
+        {
+            "text": "排练室的灯光比舞台诚实。",
+            "source": "本站文案 · 幕后"
+        },
+        {
+            "text": "一首歌写完，就和作者没关系了。",
+            "source": "本站文案 · 创作"
+        },
+        {
+            "text": "离开一座城市的时候，才听得见它的声音。",
+            "source": "本站文案 · 城市主题"
+        },
+        {
+            "text": "老歌单里全是自己二十几岁的样子。",
+            "source": "本站文案 · 日常"
+        },
+        {
+            "text": "先把地方唱明白，再谈别的。",
+            "source": "本站文案 · 巡演"
+        },
+        {
+            "text": "现场会有杂音，但杂音也是那晚的一部分。",
+            "source": "本站文案 · 现场"
+        }
+    ],
+    "banners": [
+        {
+            "kicker": "FEATURED",
+            "title": "叁叁肆",
+            "desc": "334 座城市，334 个现场。把音乐带到没有演出的地方去。",
+            "to": "/more/tour",
+            "hue": 208
+        },
+        {
+            "kicker": "ALBUM · 2014",
+            "title": "热河",
+            "desc": "巡演前最后一张录音室专辑，旋律线最开放的一次。",
+            "to": "/songs/album/a08",
+            "hue": 32
+        },
+        {
+            "kicker": "LIVE",
+            "title": "天空之城 · 万人合唱",
+            "desc": "第 100 场现场纪录，副歌部分完全交给台下。",
+            "to": "/videos/v08",
+            "songId": "s44",
+            "hue": 268
+        },
+        {
+            "kicker": "TOOLS",
+            "title": "吉他弹唱工具集",
+            "desc": "全曲目和弦、Capo 建议、节拍器与调音器，一次配齐。",
+            "to": "/tools",
+            "hue": 158
+        }
+    ],
+    "chordLibrary": [
+        {
+            "name": "C",
+            "display": "C",
+            "frets": [
+                -1,
+                3,
+                2,
+                0,
+                1,
+                0
+            ],
+            "fingers": [
+                -1,
+                3,
+                2,
+                -1,
+                1,
+                -1
+            ],
+            "rootString": 5,
+            "quality": "major"
+        },
+        {
+            "name": "D",
+            "display": "D",
+            "frets": [
+                -1,
+                -1,
+                0,
+                2,
+                3,
+                2
+            ],
+            "fingers": [
+                -1,
+                -1,
+                -1,
+                1,
+                3,
+                2
+            ],
+            "rootString": 4,
+            "quality": "major"
+        },
+        {
+            "name": "Dm",
+            "display": "Dm",
+            "frets": [
+                -1,
+                -1,
+                0,
+                2,
+                3,
+                1
+            ],
+            "fingers": [
+                -1,
+                -1,
+                -1,
+                2,
+                3,
+                1
+            ],
+            "rootString": 4,
+            "quality": "minor"
+        },
+        {
+            "name": "E",
+            "display": "E",
+            "frets": [
+                0,
+                2,
+                2,
+                1,
+                0,
+                0
+            ],
+            "fingers": [
+                -1,
+                2,
+                3,
+                1,
+                -1,
+                -1
+            ],
+            "rootString": 6,
+            "quality": "major"
+        },
+        {
+            "name": "Em",
+            "display": "Em",
+            "frets": [
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+            ],
+            "fingers": [
+                -1,
+                2,
+                3,
+                -1,
+                -1,
+                -1
+            ],
+            "rootString": 6,
+            "quality": "minor"
+        },
+        {
+            "name": "Em7",
+            "display": "Em7",
+            "frets": [
+                0,
+                2,
+                0,
+                0,
+                0,
+                0
+            ],
+            "fingers": [
+                -1,
+                2,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "rootString": 6,
+            "quality": "minor7"
+        },
+        {
+            "name": "F",
+            "display": "F",
+            "frets": [
+                1,
+                3,
+                3,
+                2,
+                1,
+                1
+            ],
+            "fingers": [
+                1,
+                3,
+                4,
+                2,
+                1,
+                1
+            ],
+            "barre": 1,
+            "rootString": 6,
+            "quality": "major"
+        },
+        {
+            "name": "G",
+            "display": "G",
+            "frets": [
+                3,
+                2,
+                0,
+                0,
+                0,
+                3
+            ],
+            "fingers": [
+                2,
+                1,
+                -1,
+                -1,
+                -1,
+                3
+            ],
+            "rootString": 6,
+            "quality": "major"
+        },
+        {
+            "name": "G7",
+            "display": "G7",
+            "frets": [
+                3,
+                2,
+                0,
+                0,
+                0,
+                1
+            ],
+            "fingers": [
+                3,
+                2,
+                -1,
+                -1,
+                -1,
+                1
+            ],
+            "rootString": 6,
+            "quality": "seventh"
+        },
+        {
+            "name": "A",
+            "display": "A",
+            "frets": [
+                -1,
+                0,
+                2,
+                2,
+                2,
+                0
+            ],
+            "fingers": [
+                -1,
+                -1,
+                1,
+                2,
+                3,
+                -1
+            ],
+            "rootString": 5,
+            "quality": "major"
+        },
+        {
+            "name": "A7",
+            "display": "A7",
+            "frets": [
+                -1,
+                0,
+                2,
+                0,
+                2,
+                0
+            ],
+            "fingers": [
+                -1,
+                -1,
+                2,
+                -1,
+                3,
+                -1
+            ],
+            "rootString": 5,
+            "quality": "seventh"
+        },
+        {
+            "name": "Am",
+            "display": "Am",
+            "frets": [
+                -1,
+                0,
+                2,
+                2,
+                1,
+                0
+            ],
+            "fingers": [
+                -1,
+                -1,
+                2,
+                3,
+                1,
+                -1
+            ],
+            "rootString": 5,
+            "quality": "minor"
+        },
+        {
+            "name": "Bb",
+            "display": "B♭",
+            "frets": [
+                -1,
+                1,
+                3,
+                3,
+                3,
+                1
+            ],
+            "fingers": [
+                -1,
+                1,
+                2,
+                3,
+                4,
+                1
+            ],
+            "barre": 1,
+            "rootString": 5,
+            "quality": "major"
+        },
+        {
+            "name": "Bm",
+            "display": "Bm",
+            "frets": [
+                -1,
+                2,
+                4,
+                4,
+                3,
+                2
+            ],
+            "fingers": [
+                -1,
+                1,
+                2,
+                4,
+                3,
+                1
+            ],
+            "barre": 2,
+            "rootString": 5,
+            "quality": "minor"
+        },
+        {
+            "name": "B7",
+            "display": "B7",
+            "frets": [
+                -1,
+                2,
+                1,
+                2,
+                0,
+                2
+            ],
+            "fingers": [
+                -1,
+                2,
+                1,
+                3,
+                -1,
+                4
+            ],
+            "rootString": 5,
+            "quality": "seventh"
+        },
+        {
+            "name": "Cadd9",
+            "display": "Cadd9",
+            "frets": [
+                -1,
+                3,
+                2,
+                0,
+                3,
+                3
+            ],
+            "fingers": [
+                -1,
+                2,
+                1,
+                -1,
+                3,
+                4
+            ],
+            "rootString": 5,
+            "quality": "add9"
+        },
+        {
+            "name": "Csus2",
+            "display": "Csus2",
+            "frets": [
+                -1,
+                3,
+                0,
+                0,
+                3,
+                -1
+            ],
+            "fingers": [
+                -1,
+                2,
+                -1,
+                -1,
+                3,
+                -1
+            ],
+            "rootString": 5,
+            "quality": "sus"
+        },
+        {
+            "name": "Dsus2",
+            "display": "Dsus2",
+            "frets": [
+                -1,
+                -1,
+                0,
+                2,
+                3,
+                0
+            ],
+            "fingers": [
+                -1,
+                -1,
+                -1,
+                2,
+                3,
+                1
+            ],
+            "rootString": 4,
+            "quality": "sus"
+        },
+        {
+            "name": "F#m",
+            "display": "F♯m",
+            "frets": [
+                2,
+                4,
+                4,
+                2,
+                2,
+                2
+            ],
+            "fingers": [
+                1,
+                3,
+                4,
+                1,
+                1,
+                1
+            ],
+            "barre": 2,
+            "rootString": 6,
+            "quality": "minor"
+        },
+        {
+            "name": "D7",
+            "display": "D7",
+            "frets": [
+                -1,
+                -1,
+                0,
+                2,
+                1,
+                2
+            ],
+            "fingers": [
+                -1,
+                -1,
+                -1,
+                2,
+                1,
+                3
+            ],
+            "rootString": 4,
+            "quality": "seventh"
+        }
+    ],
+    "sheets": [
+        {
+            "songId": "s09",
+            "tuning": "标准调弦（原调 Am）",
+            "tempoMark": "♩= 76 · 舒缓",
+            "levelText": "入门友好 · 四个和弦走完全曲",
+            "intro": [
+                "Am",
+                "F",
+                "C",
+                "G"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "C",
+                        "G"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "C",
+                        "G"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "预副歌",
+                    "chords": [
+                        "F",
+                        "G",
+                        "Am",
+                        "Am"
+                    ],
+                    "lines": 2
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "F",
+                        "G",
+                        "C",
+                        "Am",
+                        "F",
+                        "G",
+                        "Am"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "间奏",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "C",
+                        "G"
+                    ],
+                    "lines": 2
+                },
+                {
+                    "name": "尾奏",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "Am"
+                    ],
+                    "lines": 2
+                }
+            ],
+            "tips": [
+                "全曲分解为主：53231323，副歌第二段可切换成下下上上下上",
+                "Am → F 的转换用无名指作支撑点，减少手掌抬起",
+                "原曲人声偏低，女生可 Cap 3 品改按 Gm 指型"
+            ],
+            "usedChords": [
+                "Am",
+                "F",
+                "C",
+                "G",
+                "Em"
+            ]
+        },
+        {
+            "songId": "s33",
+            "tuning": "标准调弦（原调 G）",
+            "tempoMark": "♩= 78 · 中速摇摆",
+            "levelText": "一级 · F 和弦可用小 F 替代",
+            "intro": [
+                "G",
+                "Em",
+                "C",
+                "D"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "G",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "G",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "C",
+                        "D",
+                        "G",
+                        "Em",
+                        "C",
+                        "D",
+                        "G"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "桥段",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "尾奏",
+                    "chords": [
+                        "C",
+                        "D",
+                        "G"
+                    ],
+                    "lines": 2
+                }
+            ],
+            "tips": [
+                "扫弦重音放在 2、4 拍，手腕放松，不要靠手臂",
+                "桥段建议改用手掌闷音（palm mute）贴近琴桥",
+                "现场版在副歌后有一段 8 小节间奏，Solo 走 G 大调五声音阶"
+            ],
+            "usedChords": [
+                "G",
+                "Em",
+                "C",
+                "D",
+                "Am",
+                "Bm"
+            ]
+        },
+        {
+            "songId": "s34",
+            "tuning": "标准调弦（原调 Em）",
+            "tempoMark": "♩= 72 · 自由",
+            "levelText": "三级 · 长段落 + 大横按",
+            "intro": [
+                "Em",
+                "C",
+                "G",
+                "D"
+            ],
+            "sections": [
+                {
+                    "name": "前奏（指弹）",
+                    "chords": [
+                        "Em",
+                        "Cadd9",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "C",
+                        "D",
+                        "Em",
+                        "Em",
+                        "C",
+                        "D",
+                        "B7"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "间奏（乐队）",
+                    "chords": [
+                        "Em",
+                        "D",
+                        "C",
+                        "B7"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "尾声反复",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 6
+                }
+            ],
+            "tips": [
+                "前奏是这首歌的记忆点，建议单独慢速练习到肌肉记忆",
+                "主歌 8 句不断反复同一走向，靠力度层次而非和弦变化推进",
+                "B7 出现的位置是全曲情绪最高点，可放慢半拍进入"
+            ],
+            "usedChords": [
+                "Em",
+                "C",
+                "G",
+                "D",
+                "Cadd9",
+                "B7"
+            ]
+        },
+        {
+            "songId": "s21",
+            "tuning": "标准调弦（原调 G）",
+            "tempoMark": "♩= 76 · 行板",
+            "levelText": "二级 · Capo 建议 0 品（原调）",
+            "intro": [
+                "G",
+                "D/F#",
+                "Em",
+                "C"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "G",
+                        "D/F#",
+                        "Em",
+                        "C"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "G",
+                        "D/F#",
+                        "Em",
+                        "C"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "C",
+                        "G",
+                        "Am",
+                        "Em",
+                        "C",
+                        "D",
+                        "G"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "间奏",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "尾奏",
+                    "chords": [
+                        "C",
+                        "D",
+                        "G",
+                        "G"
+                    ],
+                    "lines": 2
+                }
+            ],
+            "tips": [
+                "D/F# 用拇指勾 6 弦 2 品，低音下行是这首歌的关键",
+                "副歌进入前留一个整小节的空拍，不要抢",
+                "指弹版把 3、4 弦旋律线提出来，节奏会更像原版"
+            ],
+            "usedChords": [
+                "G",
+                "D",
+                "Em",
+                "C",
+                "Am",
+                "D/F#"
+            ]
+        },
+        {
+            "songId": "s39",
+            "tuning": "标准调弦（原调 G · Capo 2）",
+            "tempoMark": "♩= 76 · 稍快摇摆",
+            "levelText": "二级 · 实际音高比指型高全音",
+            "intro": [
+                "G",
+                "Em",
+                "C",
+                "D"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "G",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "G",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "C",
+                        "D",
+                        "G",
+                        "Em",
+                        "C",
+                        "D",
+                        "G"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "反复段",
+                    "chords": [
+                        "G",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "尾奏",
+                    "chords": [
+                        "C",
+                        "D",
+                        "G"
+                    ],
+                    "lines": 2
+                }
+            ],
+            "tips": [
+                "Capo 2 + G 指型 = 实际 A 调，人声偏高时取下 Capo 0",
+                "反复段是全场合唱部分，力度做渐强即可，不要加花",
+                "扫弦型：下 下上 上 下上，第二拍的空隙要保持"
+            ],
+            "usedChords": [
+                "G",
+                "Em",
+                "C",
+                "D",
+                "Am"
+            ]
+        },
+        {
+            "songId": "s36",
+            "tuning": "标准调弦（原调 Am）",
+            "tempoMark": "♩= 70 · 缓慢",
+            "levelText": "三级 · 长音 + 反复，需控制气息",
+            "intro": [
+                "Am",
+                "G",
+                "F",
+                "E"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "Am",
+                        "G",
+                        "F",
+                        "E"
+                    ],
+                    "lines": 6
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "Am",
+                        "G",
+                        "F",
+                        "E"
+                    ],
+                    "lines": 6
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "F",
+                        "G",
+                        "Am",
+                        "Am",
+                        "F",
+                        "G",
+                        "E"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "间奏（口琴）",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "G",
+                        "Am"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "尾声",
+                    "chords": [
+                        "Am",
+                        "G",
+                        "F",
+                        "Am"
+                    ],
+                    "lines": 4
+                }
+            ],
+            "tips": [
+                "E 大和弦在这里是属和弦，不要弹太重，它是一个过渡",
+                "全曲靠音量的起伏推进，右手最多到 mf",
+                "口琴间奏部分可加一段 4 小节的鼓点，现场版常见处理"
+            ],
+            "usedChords": [
+                "Am",
+                "G",
+                "F",
+                "E",
+                "Em"
+            ]
+        },
+        {
+            "songId": "s13",
+            "tuning": "标准调弦（原调 Em）",
+            "tempoMark": "♩= 74 · 中速",
+            "levelText": "四级 · 段落多、反复长",
+            "intro": [
+                "Em",
+                "C",
+                "G",
+                "D"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "C",
+                        "G",
+                        "Am",
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "Em",
+                        "C",
+                        "G",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "器乐段",
+                    "chords": [
+                        "Am",
+                        "Em",
+                        "C",
+                        "D"
+                    ],
+                    "lines": 8
+                },
+                {
+                    "name": "末段反复",
+                    "chords": [
+                        "C",
+                        "G",
+                        "Am",
+                        "Em"
+                    ],
+                    "lines": 8
+                }
+            ],
+            "tips": [
+                "器乐段是整首歌的动态峰值，吉他可切换到电吉他 + Overdrive",
+                "末段反复建议做 4 次 mp → mf 的渐强，第 4 次直接收",
+                "人声在此曲偏低，女声建议 Capo 3"
+            ],
+            "usedChords": [
+                "Em",
+                "C",
+                "G",
+                "D",
+                "Am",
+                "Bm"
+            ]
+        },
+        {
+            "songId": "s19",
+            "tuning": "标准调弦（原调 Am）",
+            "tempoMark": "♩= 68 · 自由",
+            "levelText": "四级 · 节奏不规则，需先跟原曲数拍",
+            "intro": [
+                "Am",
+                "F",
+                "Dm",
+                "E"
+            ],
+            "sections": [
+                {
+                    "name": "主歌 A",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "Dm",
+                        "E"
+                    ],
+                    "lines": 6
+                },
+                {
+                    "name": "副歌",
+                    "chords": [
+                        "Dm",
+                        "Am",
+                        "E",
+                        "Am"
+                    ],
+                    "lines": 4
+                },
+                {
+                    "name": "主歌 B",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "Dm",
+                        "E"
+                    ],
+                    "lines": 6
+                },
+                {
+                    "name": "尾声",
+                    "chords": [
+                        "Am",
+                        "F",
+                        "E",
+                        "Am"
+                    ],
+                    "lines": 6
+                }
+            ],
+            "tips": [
+                "小调色彩为主，E 和弦出现的每一次都要给它足够的重量",
+                "尾声 6 句不断反复同一走向，直到渐弱结束",
+                "琴颈拾音器位置比琴桥拾音器更接近原版音色"
+            ],
+            "usedChords": [
+                "Am",
+                "F",
+                "Dm",
+                "E",
+                "Em"
+            ]
+        }
+    ],
+    "progressions": [
+        {
+            "name": "卡农走向",
+            "roman": "I–V–vi–IV",
+            "degrees": [
+                1,
+                5,
+                6,
+                4
+            ],
+            "example": "G–D–Em–C",
+            "hint": "最常用，适合大多数抒情曲目"
+        },
+        {
+            "name": "四三六二",
+            "roman": "I–vi–IV–V",
+            "degrees": [
+                1,
+                6,
+                4,
+                5
+            ],
+            "example": "C–Am–F–G",
+            "hint": "民谣主歌常用"
+        },
+        {
+            "name": "小调下行",
+            "roman": "i–VII–VI–V",
+            "degrees": [
+                6,
+                5,
+                4,
+                3
+            ],
+            "example": "Em–D–C–B7",
+            "hint": "副歌情绪推进"
+        },
+        {
+            "name": "五三六四",
+            "roman": "IV–I–vi–V",
+            "degrees": [
+                4,
+                1,
+                6,
+                5
+            ],
+            "example": "C–G–Em–D",
+            "hint": "反复段落、长尾音"
+        },
+        {
+            "name": "二五一",
+            "roman": "ii–V–I",
+            "degrees": [
+                2,
+                5,
+                1
+            ],
+            "example": "Am–D7–G",
+            "hint": "带爵士色彩，转调衔接"
+        }
+    ],
+    "difficultyScale": [
+        {
+            "level": 1,
+            "label": "入门",
+            "desc": "不超过 3 个和弦"
+        },
+        {
+            "level": 2,
+            "label": "简单",
+            "desc": "开放和弦 + 基础扫弦"
+        },
+        {
+            "level": 3,
+            "label": "中等",
+            "desc": "含大横按或分解变化"
+        },
+        {
+            "level": 4,
+            "label": "较难",
+            "desc": "段落多、动态控制要求高"
+        },
+        {
+            "level": 5,
+            "label": "困难",
+            "desc": "指弹改编或特殊调弦"
+        }
+    ],
+    "profile": {
+        "name": "李志",
+        "alias": "Li Zhi",
+        "birthday": "11-13",
+        "base": "江苏 · 南京",
+        "roles": [
+            "唱作人",
+            "吉他手",
+            "叁叁肆巡演发起人"
+        ],
+        "genres": [
+            "民谣摇滚",
+            "独立摇滚",
+            "城市叙事"
+        ],
+        "instruments": [
+            "木吉他",
+            "电吉他",
+            "人声"
+        ],
+        "activeSince": 2004,
+        "label": "自制发行",
+        "intro": "以城市为线索的中文唱作人。早期独立完成词曲、录音与发行，在网络流传中积累了第一批听众；后来转向完整乐队编制，并把「演出」本身当作主要的工作方式。"
+    },
+    "facts": [
+        {
+            "label": "首张自制版本",
+            "value": "2004"
+        },
+        {
+            "label": "常驻城市",
+            "value": "南京"
+        },
+        {
+            "label": "巡演计划",
+            "value": "叁叁肆（334 城 / 334 场 / 十年）",
+            "note": "2017 年公布"
+        },
+        {
+            "label": "录音室专辑",
+            "value": "8 张"
+        },
+        {
+            "label": "现场曲目规模",
+            "value": "56 首"
+        },
+        {
+            "label": "发行方式",
+            "value": "长期以自有渠道发行与现场售卖为主"
+        }
+    ],
+    "chapters": [
+        {
+            "title": "一 · 一个人和一把吉他",
+            "paras": [
+                "最早的版本几乎是卧室制作：一把木吉他、一遍过的 Vocoding、手写歌词本。听众靠互相转发找到这些歌，也因此形成了非常独特的「先有现场、后有唱片」的关系。",
+                "这一阶段的作品结构简短、情绪直白，被后来很多翻唱者当作入门曲目。"
+            ]
+        },
+        {
+            "title": "二 · 把乐队带上台",
+            "paras": [
+                "从 acoustic 转向 full band 之后，同一首歌在现场被拉长：更多的间奏、更长的反复、更大的动态落差。录音室版本与现场版本从此成为两种作品。",
+                "也是在这个阶段，「地名」开始频繁出现在歌名里，城市成为理解这些歌最主要的入口。"
+            ]
+        },
+        {
+            "title": "三 · 叁叁肆",
+            "paras": [
+                "一个在Livehouse 稀缺的城市里办演出的十年计划：334 座城市，每城一场。它同时是一次商业试验——不靠综艺、不靠流量，只靠现场售票维持团队运转。",
+                "巡演把大量二线以下的城市纳入了同一张路线图，也把「乐队大巴 + 按月循环」的工作方式固定下来。"
+            ]
+        },
+        {
+            "title": "四 · 到今天",
+            "paras": [
+                "作品数量并不庞大，但每一张都被反复演出与改写。对弹唱者来说，这套曲目构成了一个自成体系的练习库：和弦不复杂，难的是语气和分寸。"
+            ]
+        }
+    ],
+    "bandMembers": [],
+    "faqs": [
+        {
+            "q": "为什么很多歌名都是一个地名？",
+            "a": "地名是一个很省事的锚点：它把情绪放进具体的街道和季节，听众可以用自己的经历去填。"
+        },
+        {
+            "q": "叁叁肆为什么选 334 这个数字？",
+            "a": "按中国行政区划的县级市数量估算而来，目标是走到那些没有演出场所的地方去。"
+        },
+        {
+            "q": "现场版本为什么比录音室长？",
+            "a": "完整乐队编制允许更大的动态层次，也把合唱段落留给了台下。"
+        },
+        {
+            "q": "站内的歌词和和弦谱是哪来的？",
+            "a": "来自公开渠道整理与用户投稿，如涉及版权问题请通过联系页面告知，我们会及时处理。"
+        }
+    ],
+    "awards": [],
+    "tourCities": [
+        {
+            "city": "南京",
+            "province": "江苏",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "苏州",
+            "province": "江苏",
+            "year": 2018,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "无锡",
+            "province": "江苏",
+            "year": 2019,
+            "venue": "工人文化宫",
+            "done": true
+        },
+        {
+            "city": "常州",
+            "province": "江苏",
+            "year": 2019,
+            "venue": "老城影剧院",
+            "done": true
+        },
+        {
+            "city": "徐州",
+            "province": "江苏",
+            "year": 2021,
+            "venue": "大学城音乐厅",
+            "done": true
+        },
+        {
+            "city": "南通",
+            "province": "江苏",
+            "year": 2021,
+            "venue": "红星现场",
+            "done": true
+        },
+        {
+            "city": "扬州",
+            "province": "江苏",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "镇江",
+            "province": "江苏",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "泰州",
+            "province": "江苏",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "盐城",
+            "province": "江苏",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "淮安",
+            "province": "江苏",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "连云港",
+            "province": "江苏",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "宿迁",
+            "province": "江苏",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "昆山",
+            "province": "江苏",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "江阴",
+            "province": "江苏",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "宜兴",
+            "province": "江苏",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "杭州",
+            "province": "浙江",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "宁波",
+            "province": "浙江",
+            "year": 2019,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "温州",
+            "province": "浙江",
+            "year": 2021,
+            "venue": "工人文化宫",
+            "done": true
+        },
+        {
+            "city": "嘉兴",
+            "province": "浙江",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "湖州",
+            "province": "浙江",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "绍兴",
+            "province": "浙江",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "金华",
+            "province": "浙江",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "台州",
+            "province": "浙江",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "丽水",
+            "province": "浙江",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "衢州",
+            "province": "浙江",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "舟山",
+            "province": "浙江",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "义乌",
+            "province": "浙江",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "余杭",
+            "province": "浙江",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "合肥",
+            "province": "安徽",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "芜湖",
+            "province": "安徽",
+            "year": 2021,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "蚌埠",
+            "province": "安徽",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "马鞍山",
+            "province": "安徽",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "安庆",
+            "province": "安徽",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "黄山",
+            "province": "安徽",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "阜阳",
+            "province": "安徽",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "滁州",
+            "province": "安徽",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "宿州",
+            "province": "安徽",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "六安",
+            "province": "安徽",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "上海市区",
+            "province": "上海",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "嘉定",
+            "province": "上海",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "松江",
+            "province": "上海",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "青浦",
+            "province": "上海",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "奉贤",
+            "province": "上海",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "北京",
+            "province": "北京",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "通州",
+            "province": "北京",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "昌平",
+            "province": "北京",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "大兴",
+            "province": "北京",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "天津",
+            "province": "天津",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "蓟州",
+            "province": "天津",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "滨海",
+            "province": "天津",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "广州",
+            "province": "广东",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "深圳",
+            "province": "广东",
+            "year": 2018,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "东莞",
+            "province": "广东",
+            "year": 2019,
+            "venue": "工人文化宫",
+            "done": true
+        },
+        {
+            "city": "佛山",
+            "province": "广东",
+            "year": 2019,
+            "venue": "老城影剧院",
+            "done": true
+        },
+        {
+            "city": "珠海",
+            "province": "广东",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "汕头",
+            "province": "广东",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "湛江",
+            "province": "广东",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "中山",
+            "province": "广东",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "江门",
+            "province": "广东",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "肇庆",
+            "province": "广东",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "惠州",
+            "province": "广东",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "梅州",
+            "province": "广东",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "汕尾",
+            "province": "广东",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "河源",
+            "province": "广东",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "阳江",
+            "province": "广东",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "清远",
+            "province": "广东",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "福州",
+            "province": "福建",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "厦门",
+            "province": "福建",
+            "year": 2018,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "泉州",
+            "province": "福建",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "漳州",
+            "province": "福建",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "莆田",
+            "province": "福建",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "龙岩",
+            "province": "福建",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "三明",
+            "province": "福建",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "南平",
+            "province": "福建",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "宁德",
+            "province": "福建",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "济南",
+            "province": "山东",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "青岛",
+            "province": "山东",
+            "year": 2018,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "烟台",
+            "province": "山东",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "潍坊",
+            "province": "山东",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "淄博",
+            "province": "山东",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "临沂",
+            "province": "山东",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "威海",
+            "province": "山东",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "泰安",
+            "province": "山东",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "德州",
+            "province": "山东",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "聊城",
+            "province": "山东",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "日照",
+            "province": "山东",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "菏泽",
+            "province": "山东",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "济宁",
+            "province": "山东",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "滨州",
+            "province": "山东",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "郑州",
+            "province": "河南",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "洛阳",
+            "province": "河南",
+            "year": 2019,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "开封",
+            "province": "河南",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "新乡",
+            "province": "河南",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "安阳",
+            "province": "河南",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "焦作",
+            "province": "河南",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "濮阳",
+            "province": "河南",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "许昌",
+            "province": "河南",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "漯河",
+            "province": "河南",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "三门峡",
+            "province": "河南",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "南阳",
+            "province": "河南",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "商丘",
+            "province": "河南",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "信阳",
+            "province": "河南",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "周口",
+            "province": "河南",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "驻马店",
+            "province": "河南",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "石家庄",
+            "province": "河北",
+            "year": 2021,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "保定",
+            "province": "河北",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "唐山",
+            "province": "河北",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "秦皇岛",
+            "province": "河北",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "邯郸",
+            "province": "河北",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "邢台",
+            "province": "河北",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "张家口",
+            "province": "河北",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "承德",
+            "province": "河北",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "沧州",
+            "province": "河北",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "廊坊",
+            "province": "河北",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "衡水",
+            "province": "河北",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "太原",
+            "province": "山西",
+            "year": 2021,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "大同",
+            "province": "山西",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "临汾",
+            "province": "山西",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "运城",
+            "province": "山西",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "晋中",
+            "province": "山西",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "长治",
+            "province": "山西",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "忻州",
+            "province": "山西",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "吕梁",
+            "province": "山西",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "西安",
+            "province": "陕西",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "咸阳",
+            "province": "陕西",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "宝鸡",
+            "province": "陕西",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "渭南",
+            "province": "陕西",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "延安",
+            "province": "陕西",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "榆林",
+            "province": "陕西",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "汉中",
+            "province": "陕西",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "安康",
+            "province": "陕西",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "铜川",
+            "province": "陕西",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "武汉",
+            "province": "湖北",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "宜昌",
+            "province": "湖北",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "襄阳",
+            "province": "湖北",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "荆州",
+            "province": "湖北",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "黄石",
+            "province": "湖北",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "十堰",
+            "province": "湖北",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "孝感",
+            "province": "湖北",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "荆门",
+            "province": "湖北",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "鄂州",
+            "province": "湖北",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "长沙",
+            "province": "湖南",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "株洲",
+            "province": "湖南",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "湘潭",
+            "province": "湖南",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "衡阳",
+            "province": "湖南",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "岳阳",
+            "province": "湖南",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "常德",
+            "province": "湖南",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "益阳",
+            "province": "湖南",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "郴州",
+            "province": "湖南",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "娄底",
+            "province": "湖南",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "邵阳",
+            "province": "湖南",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "南昌",
+            "province": "江西",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "九江",
+            "province": "江西",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "赣州",
+            "province": "江西",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "景德镇",
+            "province": "江西",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "萍乡",
+            "province": "江西",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "新余",
+            "province": "江西",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "宜春",
+            "province": "江西",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "上饶",
+            "province": "江西",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "吉安",
+            "province": "江西",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "成都",
+            "province": "四川",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "绵阳",
+            "province": "四川",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "德阳",
+            "province": "四川",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "乐山",
+            "province": "四川",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "宜宾",
+            "province": "四川",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "泸州",
+            "province": "四川",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "南充",
+            "province": "四川",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "达州",
+            "province": "四川",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "自贡",
+            "province": "四川",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "内江",
+            "province": "四川",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "广元",
+            "province": "四川",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "眉山",
+            "province": "四川",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "广安",
+            "province": "四川",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "重庆",
+            "province": "重庆",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "万州",
+            "province": "重庆",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "涪陵",
+            "province": "重庆",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "江津",
+            "province": "重庆",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "昆明",
+            "province": "云南",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "大理",
+            "province": "云南",
+            "year": 2021,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "丽江",
+            "province": "云南",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "曲靖",
+            "province": "云南",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "玉溪",
+            "province": "云南",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "保山",
+            "province": "云南",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "昭通",
+            "province": "云南",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "红河",
+            "province": "云南",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "楚雄",
+            "province": "云南",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "贵阳",
+            "province": "贵州",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "遵义",
+            "province": "贵州",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "安顺",
+            "province": "贵州",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "毕节",
+            "province": "贵州",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "铜仁",
+            "province": "贵州",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "凯里",
+            "province": "贵州",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "都匀",
+            "province": "贵州",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "南宁",
+            "province": "广西",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "桂林",
+            "province": "广西",
+            "year": 2021,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "柳州",
+            "province": "广西",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "北海",
+            "province": "广西",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "玉林",
+            "province": "广西",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "百色",
+            "province": "广西",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "梧州",
+            "province": "广西",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "贵港",
+            "province": "广西",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "沈阳",
+            "province": "辽宁",
+            "year": 2019,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "大连",
+            "province": "辽宁",
+            "year": 2019,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "鞍山",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "锦州",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "营口",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "丹东",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "抚顺",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "本溪",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "辽阳",
+            "province": "辽宁",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "长春",
+            "province": "吉林",
+            "year": 2021,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "吉林",
+            "province": "吉林",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "四平",
+            "province": "吉林",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "通化",
+            "province": "吉林",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "白城",
+            "province": "吉林",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "延吉",
+            "province": "吉林",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "哈尔滨",
+            "province": "黑龙江",
+            "year": 2021,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "齐齐哈尔",
+            "province": "黑龙江",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "大庆",
+            "province": "黑龙江",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "牡丹江",
+            "province": "黑龙江",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "佳木斯",
+            "province": "黑龙江",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "绥化",
+            "province": "黑龙江",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "呼和浩特",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "包头",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "鄂尔多斯",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "赤峰",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "通辽",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "乌兰察布",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "巴彦淖尔",
+            "province": "内蒙古",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "兰州",
+            "province": "甘肃",
+            "year": 2018,
+            "venue": "文化馆小剧场",
+            "done": true
+        },
+        {
+            "city": "天水",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "酒泉",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "张掖",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "武威",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "白银",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "庆阳",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "平凉",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "南方剧院",
+            "done": false
+        },
+        {
+            "city": "嘉峪关",
+            "province": "甘肃",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "定西",
+            "province": "甘肃",
+            "year": 2019,
+            "venue": "山丘-livehouse",
+            "done": true
+        },
+        {
+            "city": "银川",
+            "province": "宁夏",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "石嘴山",
+            "province": "宁夏",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "吴忠",
+            "province": "宁夏",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "固原",
+            "province": "宁夏",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "中卫",
+            "province": "宁夏",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "西宁",
+            "province": "青海",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "海东",
+            "province": "青海",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "格尔木",
+            "province": "青海",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "德令哈",
+            "province": "青海",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "乌鲁木齐",
+            "province": "新疆",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "昌吉",
+            "province": "新疆",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "克拉玛依",
+            "province": "新疆",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "喀什",
+            "province": "新疆",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "伊宁",
+            "province": "新疆",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        },
+        {
+            "city": "库尔勒",
+            "province": "新疆",
+            "year": 0,
+            "venue": "红星现场",
+            "done": false
+        },
+        {
+            "city": "哈密",
+            "province": "新疆",
+            "year": 0,
+            "venue": "1701 Live House",
+            "done": false
+        },
+        {
+            "city": "拉萨",
+            "province": "西藏",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "日喀则",
+            "province": "西藏",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "林芝",
+            "province": "西藏",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "昌都",
+            "province": "西藏",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "海口",
+            "province": "海南",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "三亚",
+            "province": "海南",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "儋州",
+            "province": "海南",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "文昌",
+            "province": "海南",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "三沙",
+            "province": "其他",
+            "year": 0,
+            "venue": "文化馆小剧场",
+            "done": false
+        },
+        {
+            "city": "台北",
+            "province": "其他",
+            "year": 0,
+            "venue": "山丘-livehouse",
+            "done": false
+        },
+        {
+            "city": "高雄",
+            "province": "其他",
+            "year": 0,
+            "venue": "工人文化宫",
+            "done": false
+        },
+        {
+            "city": "香港",
+            "province": "其他",
+            "year": 0,
+            "venue": "老城影剧院",
+            "done": false
+        },
+        {
+            "city": "澳门",
+            "province": "其他",
+            "year": 0,
+            "venue": "大学城音乐厅",
+            "done": false
+        }
+    ],
+    "timeline": [
+        {
+            "date": "2004",
+            "year": 2004,
+            "kind": "album",
+            "title": "首张自制版本发行",
+            "text": "词曲、录音、封面、售卖全部一人完成，开始在网络上流通。"
+        },
+        {
+            "date": "2007",
+            "year": 2007,
+            "kind": "album",
+            "title": "乐队化编曲确立",
+            "text": "从「一个人加一把吉他」转向完整乐队编制，长段落反复吟唱成为标志。"
+        },
+        {
+            "date": "2009",
+            "year": 2009,
+            "kind": "album",
+            "title": "城市题材集中写作",
+            "text": "以地名为线索的作品成批出现，构成后来现场歌单的骨架。"
+        },
+        {
+            "date": "2011",
+            "year": 2011,
+            "kind": "album",
+            "title": "录音室专辑《1701》",
+            "text": "制作完成度最高的一张，同期启动小型巡演。"
+        },
+        {
+            "date": "2014",
+            "year": 2014,
+            "kind": "album",
+            "title": "专辑《热河》",
+            "text": "巡演前最后一张录音室专辑。"
+        },
+        {
+            "date": "2017.01",
+            "year": 2017,
+            "kind": "tour",
+            "title": "宣布叁叁肆计划",
+            "text": "未来十年在 334 座城市各办一场演出，把现场带到没有 livehouse 的地方。"
+        },
+        {
+            "date": "2018.03",
+            "year": 2018,
+            "kind": "tour",
+            "title": "叁叁肆正式启动",
+            "text": "首批城市开演，乐队大巴开始按月循环。"
+        },
+        {
+            "date": "2019",
+            "year": 2019,
+            "kind": "tour",
+            "title": "累计破百场",
+            "text": "推出巡演途中录制的现场辑。"
+        },
+        {
+            "date": "2020",
+            "year": 2020,
+            "kind": "other",
+            "title": "线下暂停期",
+            "text": "演出停摆，转向线上直播与排练室内容。"
+        },
+        {
+            "date": "2021",
+            "year": 2021,
+            "kind": "tour",
+            "title": "恢复巡演 · 转向更小场地",
+            "text": "补齐西北、华北、东北多个此前未覆盖的省份。"
+        },
+        {
+            "date": "至今",
+            "year": 2026,
+            "kind": "tour",
+            "title": "已完成 43 / 334",
+            "text": "进度按本站已收录的场次统计，实际情况以官方公布为准。"
+        }
+    ],
+    "tourConfig": {
+        "target": 334,
+        "name": "叁叁肆",
+        "slogan": "334 座城市 · 334 个现场 · 十年"
+    },
+    "sponsors": [
+        {
+            "id": "t1",
+            "name": "青铜 · 旁听",
+            "icon": "🎧",
+            "amount": 10,
+            "accent": "#8c8c8c",
+            "benefits": [
+                "赞助墙永久署名",
+                "电子感谢卡一封"
+            ]
+        },
+        {
+            "id": "t2",
+            "name": "白银 · 同行",
+            "icon": "🎫",
+            "amount": 30,
+            "accent": "#adadad",
+            "benefits": [
+                "包含「旁听」全部",
+                "署名在赞助墙加粗显示",
+                "可附一句留言永久展示"
+            ]
+        },
+        {
+            "id": "t3",
+            "name": "黄金 · 常驻",
+            "icon": "🎼",
+            "amount": 68,
+            "featured": true,
+            "accent": "#d9d9d9",
+            "benefits": [
+                "包含「同行」全部",
+                "支持者名单列入「关于」页",
+                "年度收支明细提前预览"
+            ]
+        },
+        {
+            "id": "t4",
+            "name": "钻石 · 共建",
+            "icon": "🏛",
+            "amount": 168,
+            "accent": "#f2f2f2",
+            "benefits": [
+                "包含「常驻」全部",
+                "赞助墙置顶展示",
+                "网站共建鸣谢（可留站点链接）"
+            ]
+        }
+    ],
+    "payChannels": [
+        {
+            "key": "wechat",
+            "label": "微信支付",
+            "hint": "扫码后输入赞助金额"
+        },
+        {
+            "key": "alipay",
+            "label": "支付宝",
+            "hint": "扫码后输入赞助金额"
+        },
+        {
+            "key": "bank",
+            "label": "银行转账",
+            "hint": "大额 / 对公，需备注昵称"
+        }
+    ],
+    "sponsorWall": [
+        {
+            "nick": "南风",
+            "tier": "白银 · 同行",
+            "amount": 30,
+            "date": "2023-04",
+            "words": "把现场带到县城去。"
+        },
+        {
+            "nick": "阿白",
+            "tier": "黄金 · 常驻",
+            "amount": 68,
+            "date": "2022-09",
+            "words": "第 7 年，继续。"
+        },
+        {
+            "nick": "梧桐",
+            "tier": "钻石 · 共建",
+            "amount": 168,
+            "date": "2021-12",
+            "words": "排练室比舞台诚实。"
+        },
+        {
+            "nick": "一七零",
+            "tier": "白银 · 同行",
+            "amount": 30,
+            "date": "2024-06",
+            "words": "刚从 Livehouse 回来。"
+        },
+        {
+            "nick": "定西路人",
+            "tier": "青铜 · 旁听",
+            "amount": 10,
+            "date": "2025-01",
+            "words": "西北的风很大。"
+        },
+        {
+            "nick": "热河",
+            "tier": "黄金 · 常驻",
+            "amount": 68,
+            "date": "2022-03",
+            "words": "一条河能装下很多事。"
+        },
+        {
+            "nick": "山阴",
+            "tier": "白银 · 同行",
+            "amount": 30,
+            "date": "2023-10",
+            "words": "夏天还没结束。"
+        },
+        {
+            "nick": "V",
+            "tier": "钻石 · 共建",
+            "amount": 168,
+            "date": "2020-11",
+            "words": "334 个城市，一起数。"
+        },
+        {
+            "nick": "天空之城",
+            "tier": "青铜 · 旁听",
+            "amount": 10,
+            "date": "2025-05",
+            "words": "第一次赞助，为了现场。"
+        },
+        {
+            "nick": "老周",
+            "tier": "黄金 · 常驻",
+            "amount": 68,
+            "date": "2021-07",
+            "words": "继续买票，继续听。"
+        }
+    ],
+    "sponsorStats": [
+        {
+            "label": "累计赞助人次",
+            "value": "2,486"
+        },
+        {
+            "label": "服务器 + 域名续费",
+            "value": "¥3,860 / 年"
+        },
+        {
+            "label": "网站维护",
+            "value": "¥1,200 / 年"
+        }
+    ],
+    "useCases": [
+        {
+            "title": "服务器续费",
+            "text": "站点与音频托管的云服务器按月付费，赞助优先用于这部分固定支出。"
+        },
+        {
+            "title": "域名续费",
+            "text": "主域名与备用域名每年续费一次，避免站点链接失效。"
+        },
+        {
+            "title": "网站维护",
+            "text": "代码更新、素材整理与故障排查，由维护者利用业余时间完成。"
+        }
+    ],
+    "achievements": [
+        {
+            "id": "first",
+            "icon": "🌱",
+            "name": "第一次播放",
+            "hint": "随便点开一首",
+            "rule": {
+                "metric": "playCount",
+                "threshold": 1
+            }
+        },
+        {
+            "id": "ten",
+            "icon": "🎸",
+            "name": "十首过耳",
+            "hint": "累计播放 10 次",
+            "rule": {
+                "metric": "playCount",
+                "threshold": 10
+            }
+        },
+        {
+            "id": "fifty",
+            "icon": "🎼",
+            "name": "半张歌单",
+            "hint": "听过 30 首不同的歌",
+            "rule": {
+                "metric": "playedIds",
+                "threshold": 30
+            }
+        },
+        {
+            "id": "full",
+            "icon": "🏛",
+            "name": "全曲目通读",
+            "hint": "听过库里全部曲目",
+            "rule": {
+                "metric": "playedIds",
+                "threshold": 56
+            }
+        },
+        {
+            "id": "finisher",
+            "icon": "⏱",
+            "name": "听完一整首",
+            "hint": "完整播完 5 首",
+            "rule": {
+                "metric": "completedSongs",
+                "threshold": 5
+            }
+        },
+        {
+            "id": "hours",
+            "icon": "🕯",
+            "name": "十小时",
+            "hint": "累计收听 10 小时",
+            "rule": {
+                "metric": "totalSeconds",
+                "threshold": 36000
+            }
+        },
+        {
+            "id": "fav",
+            "icon": "❤️",
+            "name": "有了收藏",
+            "hint": "收藏 10 首",
+            "rule": {
+                "metric": "favoriteCount",
+                "threshold": 10
+            }
+        },
+        {
+            "id": "albums",
+            "icon": "💿",
+            "name": "整张听完",
+            "hint": "完整听完任意一张专辑",
+            "rule": {
+                "metric": "albumCoverage",
+                "threshold": 1
+            }
+        },
+        {
+            "id": "keys",
+            "icon": "🔑",
+            "name": "转调者",
+            "hint": "在变调夹工具里换算 8 次",
+            "rule": {
+                "metric": "unlockedKeys",
+                "threshold": 8
+            }
+        },
+        {
+            "id": "night",
+            "icon": "🌙",
+            "name": "深夜听众",
+            "hint": "0 点后听过 20 次",
+            "rule": {
+                "metric": "nightPlays",
+                "threshold": 20
+            }
+        },
+        {
+            "id": "streak",
+            "icon": "🔥",
+            "name": "连续一周",
+            "hint": "连续 7 天打开",
+            "rule": {
+                "metric": "consecutiveDays",
+                "threshold": 7
+            }
+        },
+        {
+            "id": "rain",
+            "icon": "🌧",
+            "name": "南京下雨了",
+            "hint": "触发一次隐藏彩蛋",
+            "rule": {
+                "metric": "easterEgg",
+                "threshold": 1
+            }
+        }
+    ],
+    "easterEggs": {
+        "rainSongIds": [
+            "s34",
+            "s45",
+            "s40",
+            "s41",
+            "s53",
+            "s55"
+        ],
+        "birthdayNote": "李志生日当天自动切换金色皮肤并撒纸屑（可在设置里手动开启）"
+    },
+    "navItems": [
+        {
+            "to": "/",
+            "label": "主页",
+            "icon": "home",
+            "group": "main",
+            "desc": "每日推荐与入口"
+        },
+        {
+            "to": "/songs",
+            "label": "歌曲",
+            "icon": "music",
+            "group": "main",
+            "desc": "曲目库与专辑"
+        },
+        {
+            "to": "/videos",
+            "label": "MV 视频",
+            "icon": "video",
+            "group": "main",
+            "desc": "现场与纪实"
+        },
+        {
+            "to": "/shorts",
+            "label": "短视频",
+            "icon": "film",
+            "group": "main",
+            "desc": "水友竖屏片段"
+        },
+        {
+            "to": "/more",
+            "label": "更多",
+            "icon": "more",
+            "group": "main",
+            "desc": "百科 · 巡演 · 报告"
+        }
+    ],
+    "libItems": [
+        {
+            "to": "/playlist/fav",
+            "label": "我喜欢",
+            "icon": "heart"
+        },
+        {
+            "to": "/history",
+            "label": "最近播放",
+            "icon": "clock"
+        },
+        {
+            "to": "/search",
+            "label": "搜索",
+            "icon": "search"
+        }
+    ],
+    "shorts": [
+        {
+            "id": "sc01",
+            "title": "成都 · 全场接唱的那半句",
+            "author": "阿远在成都",
+            "desc": "2023 最后一场，前奏一起台下就跟着唱了，这段一直没舍得删。",
+            "tags": [
+                "成都",
+                "现场",
+                "万人大合唱"
+            ],
+            "city": "成都",
+            "duration": 32,
+            "likes": 18600,
+            "comments": 412,
+            "saves": 2360,
+            "views": 512000,
+            "song": "成都"
+        },
+        {
+            "id": "sc02",
+            "title": "南方姑娘 指弹前奏",
+            "author": "老周的琴",
+            "desc": "练了三个月的前奏，还是第三小节会滑一下。",
+            "tags": [
+                "指弹",
+                "cover",
+                "南方姑娘"
+            ],
+            "duration": 24,
+            "likes": 6420,
+            "comments": 138,
+            "saves": 980,
+            "views": 138000,
+            "song": "南方姑娘"
+        },
+        {
+            "id": "sc03",
+            "title": "小酒馆门口，有人在唱《画》",
+            "author": "玉林路口",
+            "desc": "散场以后门口还有人抱着琴，路过的都在跟着哼。",
+            "tags": [
+                "街头",
+                "画",
+                "成都"
+            ],
+            "city": "成都",
+            "duration": 41,
+            "likes": 9310,
+            "comments": 205,
+            "saves": 1420,
+            "views": 227000,
+            "song": "画"
+        },
+        {
+            "id": "sc04",
+            "title": "雨里的《理想》，伞都收了",
+            "author": "西安的风",
+            "desc": "下小雨，前排没人打伞，唱到副歌全场一起喊。",
+            "tags": [
+                "理想",
+                "现场",
+                "下雨"
+            ],
+            "city": "西安",
+            "duration": 37,
+            "likes": 12400,
+            "comments": 288,
+            "saves": 1830,
+            "views": 341000,
+            "song": "理想"
+        },
+        {
+            "id": "sc05",
+            "title": "后台三十秒：调音",
+            "author": "巡演跟拍",
+            "desc": "开场前最后一次调弦，所有人都在等那个「可以」。",
+            "tags": [
+                "后台",
+                "花絮",
+                "调音"
+            ],
+            "duration": 19,
+            "likes": 3180,
+            "comments": 64,
+            "saves": 420,
+            "views": 76000
+        },
+        {
+            "id": "sc06",
+            "title": "三十岁的女人 · 清唱一段",
+            "author": "木木",
+            "desc": "宿舍熄灯以后录的，气声有点大，别嫌弃。",
+            "tags": [
+                "清唱",
+                "翻唱",
+                "三十岁的女人"
+            ],
+            "duration": 28,
+            "likes": 8740,
+            "comments": 176,
+            "saves": 1260,
+            "views": 196000,
+            "song": "三十岁的女人"
+        },
+        {
+            "id": "sc07",
+            "title": "《鼓楼》前奏，鼓手的手",
+            "author": "鼓手老K",
+            "desc": "机位固定在鼓这边，能看清每一下军鼓的位置。",
+            "tags": [
+                "鼓楼",
+                "鼓",
+                "特写"
+            ],
+            "city": "北京",
+            "duration": 26,
+            "likes": 5620,
+            "comments": 91,
+            "saves": 760,
+            "views": 118000,
+            "song": "鼓楼"
+        },
+        {
+            "id": "sc08",
+            "title": "巡演大巴上哼的两句新词",
+            "author": "车上的人",
+            "desc": "不知道会不会收录，先记下来，别外传太久。",
+            "tags": [
+                "新歌",
+                "花絮",
+                "大巴"
+            ],
+            "duration": 22,
+            "likes": 15200,
+            "comments": 397,
+            "saves": 2140,
+            "views": 428000
+        },
+        {
+            "id": "sc09",
+            "title": "换弦全过程，四分钟压成三十秒",
+            "author": "琴行小王",
+            "desc": "民谣吉他换弦，顺带擦了一遍指板，声音真的不一样。",
+            "tags": [
+                "教程",
+                "换弦",
+                "器材"
+            ],
+            "duration": 30,
+            "likes": 2410,
+            "comments": 58,
+            "saves": 610,
+            "views": 64000
+        },
+        {
+            "id": "sc10",
+            "title": "《我们的时光》副歌合唱",
+            "author": "郑州现场",
+            "desc": "副歌一进来，整个场馆的声音压过了返送。",
+            "tags": [
+                "我们的时光",
+                "合唱",
+                "现场"
+            ],
+            "city": "郑州",
+            "duration": 34,
+            "likes": 11000,
+            "comments": 244,
+            "saves": 1610,
+            "views": 302000,
+            "song": "我们的时光"
+        },
+        {
+            "id": "sc11",
+            "title": "现场最安静的一分钟",
+            "author": "第三排左边",
+            "desc": "没人喊安可，也没人说话，就听着台上那口气。",
+            "tags": [
+                "现场",
+                "安静",
+                "氛围"
+            ],
+            "duration": 45,
+            "likes": 7260,
+            "comments": 133,
+            "saves": 1120,
+            "views": 158000
+        },
+        {
+            "id": "sc12",
+            "title": "深夜排练室：只开了一盏灯",
+            "author": "排练室看门人",
+            "desc": "凌晨两点，还在过第二段编曲。",
+            "tags": [
+                "排练",
+                "深夜",
+                "花絮"
+            ],
+            "duration": 21,
+            "likes": 4980,
+            "comments": 87,
+            "saves": 690,
+            "views": 102000
+        }
+    ]
+}

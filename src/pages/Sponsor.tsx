@@ -1,46 +1,166 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
-import { Section, Stat, DemoNotice } from '../components/common/Primitives'
+import { Section, Stat } from '../components/common/Primitives'
 import { Modal } from '../components/common/Overlays'
 import { sponsors, payChannels, sponsorWall, sponsorStats, useCases } from '../data/sponsors'
-import { hash32 } from '../lib/hash'
-import { copyText } from '../lib/share'
 import { load, save } from '../lib/storage'
 import { useUi } from '../store/ui'
+import { useAuth } from '../store/auth'
+import { api } from '../api/client'
 import type { SponsorTier } from '../data/types'
 
-interface SupportRecord {
-  tierId: string
-  nick: string
-  at: number
+interface PayInfo {
+  enabled: boolean
+  provider: string
+}
+
+interface OrderRow {
+  orderNo: string
+  subject: string
+  amount: number
+  channel: string
+  status: string
+  createdAt: number
+  paidAt: number | null
+}
+
+interface PayState {
+  orderNo: string
+  payUrl: string
+  status: string
+}
+
+const STATUS_LABEL: Record<string, string> = {
+  pending: '待支付',
+  paid: '已支付',
+  closed: '已关闭',
+  refunded: '已退款',
 }
 
 export default function Sponsor() {
   const push = useUi((s) => s.push)
+  const user = useAuth((s) => s.user)
   const [picked, setPicked] = useState<SponsorTier | null>(null)
-  const [channel, setChannel] = useState(payChannels[0].key)
+  const [channel, setChannel] = useState('alipay')
   const [nick, setNick] = useState(() => load('sponsor.nick', '' as string))
-  const [records, setRecords] = useState<SupportRecord[]>(() => load('sponsor.records', [] as SupportRecord[]))
+  const [info, setInfo] = useState<PayInfo | null>(null)
+  const [pay, setPay] = useState<PayState | null>(null)
+  const [busy, setBusy] = useState(false)
+  const [orders, setOrders] = useState<OrderRow[]>([])
 
-  const cheapest = useMemo(() => Math.min(...sponsors.map((t) => t.amount)), [])
-  const myTiers = records.reduce<Record<string, number>>((acc, r) => {
-    acc[r.tierId] = (acc[r.tierId] ?? 0) + 1
-    return acc
-  }, {})
+  const supported = payChannels.filter((c) => c.key === 'alipay' || c.key === 'wechat')
+  const channels = supported.length
+    ? supported
+    : [
+        { key: 'alipay', label: '支付宝', hint: '' },
+        { key: 'wechat', label: '微信支付', hint: '' },
+      ]
+  const cheapest = Math.min(...sponsors.map((t) => t.amount))
+  const payEnabled = info?.enabled ?? false
 
-  const close = () => setPicked(null)
-
-  const confirm = () => {
-    if (!picked) return
-    const name = nick.trim() || '未填昵称'
-    save('sponsor.nick', nick.trim())
-    const next = [{ tierId: picked.id, nick: name, at: Date.now() }, ...records].slice(0, 30)
-    setRecords(next)
-    save('sponsor.records', next)
-    close()
-    push(`已记录你的赞助意向（${picked.name}）· 正式支付接口接入后才会真正扣款`, 'good')
+  const loadOrders = () => {
+    if (!user) {
+      setOrders([])
+      return
+    }
+    api<OrderRow[]>('/orders/mine')
+      .then((rows) => setOrders(rows ?? []))
+      .catch(() => undefined)
   }
+
+  useEffect(() => {
+    api<PayInfo>('/payment/info')
+      .then(setInfo)
+      .catch(() => setInfo({ enabled: false, provider: '' }))
+  }, [])
+
+  useEffect(loadOrders, [user])
+
+  // 轮询订单状态：支付成功后自动更新
+  useEffect(() => {
+    if (!pay || pay.status !== 'pending') return
+    let alive = true
+    let tries = 0
+    const timer = setInterval(async () => {
+      tries += 1
+      try {
+        const s = await api<{ status: string }>(`/orders/status/${pay.orderNo}`, { timeout: 8000 })
+        if (!alive) return
+        if (s.status !== 'pending') {
+          setPay((p) => (p ? { ...p, status: s.status } : p))
+          if (s.status === 'paid') {
+            push('支付成功，感谢你的支持！', 'good')
+            loadOrders()
+          }
+        }
+      } catch {
+        // 网络波动忽略，继续等待
+      }
+      if (tries >= 100) {
+        clearInterval(timer)
+        if (alive) setPay((p) => (p && p.status === 'pending' ? { ...p, status: 'timeout' } : p))
+      }
+    }, 3000)
+    return () => {
+      alive = false
+      clearInterval(timer)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pay?.orderNo, pay?.status])
+
+  const close = () => {
+    setPicked(null)
+    setPay(null)
+  }
+
+  const createOrder = async () => {
+    if (!picked || busy) return
+    if (!payEnabled) {
+      push('站点尚未开启在线支付，可先联系站长', 'info')
+      return
+    }
+    const name = nick.trim() || user?.name || '热心听众'
+    setBusy(true)
+    try {
+      const res = await api<{ orderNo: string; payUrl: string }>('/orders/create', {
+        method: 'POST',
+        body: {
+          subject: `${picked.name} 赞助`,
+          amount: picked.amount,
+          provider: info?.provider,
+          channel: channel === 'wechat' ? 'wxpay' : channel,
+          contact: name,
+        },
+      })
+      save('sponsor.nick', nick.trim())
+      setPay({ orderNo: res.orderNo, payUrl: res.payUrl, status: 'pending' })
+      window.open(res.payUrl, '_blank', 'noopener')
+    } catch (e) {
+      push(e instanceof Error ? e.message : '下单失败，请稍后重试', 'info')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const refreshStatus = async () => {
+    if (!pay) return
+    try {
+      const s = await api<{ status: string }>(`/orders/status/${pay.orderNo}`)
+      setPay({ ...pay, status: s.status })
+      if (s.status === 'paid') {
+        push('支付成功，感谢你的支持！', 'good')
+        loadOrders()
+      } else {
+        push('尚未收到支付结果，请稍等片刻再试', 'info')
+      }
+    } catch (e) {
+      push(e instanceof Error ? e.message : '查询失败，请稍后重试', 'info')
+    }
+  }
+
+  const paidCount = (t: SponsorTier) =>
+    orders.filter((o) => o.status === 'paid' && o.subject.startsWith(t.name)).length
 
   return (
     <div>
@@ -77,6 +197,15 @@ export default function Sponsor() {
         </div>
       </div>
 
+      {info && !info.enabled && (
+        <div className="card card--flat" style={{ marginBottom: 22 }}>
+          <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>
+            <Icon name="info" size={15} />
+            <span style={{ fontSize: 13 }}>在线支付暂未开启，档位与说明可供了解；恢复后即可直接下单支付。</span>
+          </div>
+        </div>
+      )}
+
       {/* 档位 */}
       <Section title="赞助档位" subtitle={`按次赞助 · 最低 ¥${cheapest} · 不自动续费`}>
         <div className="grid grid--tiers">
@@ -104,12 +233,12 @@ export default function Sponsor() {
                   </li>
                 ))}
               </ul>
-              {myTiers[t.id] ? (
+              {paidCount(t) > 0 ? (
                 <div className="row" style={{ gap: 8 }}>
                   <button className="btn btn--primary btn--block" onClick={() => setPicked(t)}>
                     再支持一次
                   </button>
-                  <span className="tag" title="本地记录次数">×{myTiers[t.id]}</span>
+                  <span className="tag" title="已支付次数">×{paidCount(t)}</span>
                 </div>
               ) : (
                 <button className="btn btn--block" onClick={() => setPicked(t)}>
@@ -140,51 +269,35 @@ export default function Sponsor() {
         </div>
       </Section>
 
-      {/* 我的赞助记录 */}
-      {records.length > 0 && (
-        <Section title="我的赞助记录" subtitle="只写在你的浏览器里">
+      {/* 我的赞助记录（来自服务器订单） */}
+      {user && orders.length > 0 && (
+        <Section title="我的赞助记录" subtitle="按时间倒序 · 来自服务器订单">
           <div className="list">
-            {records.map((r, i) => {
-              const t = sponsors.find((x) => x.id === r.tierId)
-              return (
-                <div className="srow" key={r.at} style={{ gridTemplateColumns: '40px minmax(0,1.4fr) 1fr 90px 60px', height: 48 }}>
-                  <span className="srow__idx">{i + 1}</span>
-                  <span className="nowrap" style={{ fontSize: 13 }}>
-                    {t?.icon} {t?.name}
-                  </span>
-                  <span className="mute nowrap" style={{ fontSize: 12 }}>
-                    ¥{t ? t.amount : '—'} / 次 · 署名「{r.nick}」
-                  </span>
-                  <span className="mute mono" style={{ fontSize: 11 }}>
-                    {new Date(r.at).toLocaleDateString()}
-                  </span>
-                  <div className="srow__acts" style={{ opacity: 1 }}>
-                    <button
-                      className="iconbtn tip"
-                      data-tip="删除这条记录"
-                      onClick={() => {
-                        const next = records.filter((x) => x.at !== r.at)
-                        setRecords(next)
-                        save('sponsor.records', next)
-                      }}
-                    >
-                      <Icon name="trash" size={14} />
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
+            {orders.map((o, i) => (
+              <div
+                className="srow"
+                key={o.orderNo}
+                style={{ gridTemplateColumns: '40px minmax(0,1.4fr) 1fr 90px 90px', height: 48 }}
+              >
+                <span className="srow__idx">{i + 1}</span>
+                <span className="nowrap" style={{ fontSize: 13 }}>{o.subject}</span>
+                <span className="mute nowrap" style={{ fontSize: 12 }}>
+                  ¥{Number(o.amount).toFixed(2)} · {o.channel === 'wxpay' ? '微信' : '支付宝'}
+                </span>
+                <span className="tag" style={{ justifySelf: 'start' }}>{STATUS_LABEL[o.status] ?? o.status}</span>
+                <span className="mute mono" style={{ fontSize: 11 }}>
+                  {new Date(o.paidAt ?? o.createdAt).toLocaleDateString()}
+                </span>
+              </div>
+            ))}
           </div>
-          <p className="mute" style={{ fontSize: 12, marginTop: 10 }}>
-            这些记录用于在演示里体现「支持过什么」，不构成任何凭证；正式版本会换成真实订单系统与电子感谢卡。
-          </p>
         </Section>
       )}
 
       {/* 赞助墙入口 */}
       <Section
         title="赞助墙"
-        subtitle={`${sponsorWall.length} 位赞助者（演示）`}
+        subtitle={`${sponsorWall.length} 位赞助者`}
         actions={
           <Link to="/sponsor/wall" className="btn btn--primary">
             <Icon name="right" size={15} /> 进入赞助墙
@@ -201,8 +314,8 @@ export default function Sponsor() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 14, margin: '6px 0 30px' }}>
         <Stat value={sponsors.length} label="赞助档位" />
         <Stat value={`¥${cheapest}`} label="最低赞助 / 次" />
-        <Stat value={payChannels.length} label="收款渠道" />
-        <Stat value={records.length} label="你的本地记录" />
+        <Stat value={channels.length} label="收款渠道" />
+        <Stat value={user ? orders.filter((o) => o.status === 'paid').length : 0} label="我的支持次数" />
       </div>
 
       <Section title="常见问题">
@@ -223,146 +336,139 @@ export default function Sponsor() {
         </div>
       </Section>
 
-      <DemoNotice>
-        本页未连接任何支付渠道，二维码为按渠道名生成的图形占位；点击「确认」只写入本地记录，可用于演示流程验收。
-      </DemoNotice>
-
-      {/* 结算演示弹窗 */}
+      {/* 结算弹窗 */}
       {picked && (
         <Modal
           title={`赞助 · ${picked.name}`}
           onClose={close}
           width={560}
           footer={
-            <>
-              <button className="btn" onClick={close}>
-                再看看
-              </button>
-              <button className="btn btn--primary" onClick={confirm}>
-                <Icon name="check" size={15} /> 我已完成赞助
-              </button>
-            </>
+            pay?.status === 'paid' ? (
+              <>
+                <button className="btn" onClick={close}>关闭</button>
+                {user && (
+                  <Link to="/me/sponsors" className="btn btn--primary" onClick={close}>
+                    <Icon name="crown" size={15} /> 查看我的赞助
+                  </Link>
+                )}
+              </>
+            ) : pay ? (
+              <>
+                <button className="btn" onClick={close}>稍后支付</button>
+                <button className="btn btn--primary" onClick={refreshStatus}>
+                  <Icon name="refresh" size={15} /> 我已完成支付
+                </button>
+              </>
+            ) : (
+              <>
+                <button className="btn" onClick={close}>再看看</button>
+                <button className="btn btn--primary" onClick={createOrder} disabled={busy || !payEnabled}>
+                  <Icon name="wallet" size={15} /> {busy ? '正在下单…' : '去支付'}
+                </button>
+              </>
+            )
           }
         >
           <div className="row" style={{ gap: 6, marginBottom: 16 }}>
             <span className="tier__price" style={{ color: picked.accent, fontSize: 28 }}>
               ¥{picked.amount}
             </span>
-            <span className="tier__unit" style={{ alignSelf: 'flex-end' }}>
-              / 次
-            </span>
+            <span className="tier__unit" style={{ alignSelf: 'flex-end' }}>/ 次</span>
             <div className="spacer" />
             <span className="mute" style={{ fontSize: 12, alignSelf: 'flex-end' }}>
               {picked.icon} {picked.name} · 不自动续费
             </span>
           </div>
 
-          <div className="srowform">
-            <div className="srowform__label">
-              <b>收款渠道</b>
-              <span>选择后下方图形即为该渠道的占位码</span>
-            </div>
-            <div className="chips">
-              {payChannels.map((c) => (
-                <button key={c.key} className={`chip ${channel === c.key ? 'is-on' : ''}`} onClick={() => setChannel(c.key)}>
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          {!pay && (
+            <>
+              <div className="srowform">
+                <div className="srowform__label">
+                  <b>收款渠道</b>
+                  <span>支付时会跳转到对应的收银台</span>
+                </div>
+                <div className="chips">
+                  {channels.map((c) => (
+                    <button
+                      key={c.key}
+                      className={`chip ${channel === c.key ? 'is-on' : ''}`}
+                      onClick={() => setChannel(c.key)}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-          <div className="row" style={{ gap: 22, marginTop: 18, flexWrap: 'wrap' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div className="qr">
-                <QrPlaceholder seed={`${channel}:${picked.id}`} />
+              <div style={{ marginTop: 18 }}>
+                <div className="mute" style={{ fontSize: 12, marginBottom: 6 }}>
+                  显示在赞助墙的署名（选填）
+                </div>
+                <input
+                  className="inputlike"
+                  placeholder={user?.name || '热心听众'}
+                  value={nick}
+                  onChange={(e) => setNick(e.target.value)}
+                  maxLength={20}
+                />
+                <div className="mute" style={{ fontSize: 11.5, marginTop: 8 }}>
+                  提交后会生成真实订单并跳转支付；未登录也可以赞助，登录后可在「我的」查看订单。
+                </div>
+                {!payEnabled && (
+                  <div className="auth__err" style={{ marginTop: 10 }}>
+                    站点尚未开启在线支付，暂无法下单。
+                  </div>
+                )}
               </div>
-              <div className="mute" style={{ fontSize: 11 }}>
-                演示图形，不含真实信息
-              </div>
-            </div>
-            <div style={{ minWidth: 230, flex: 1 }}>
-              <div className="mute" style={{ fontSize: 12, marginBottom: 6 }}>
-                {payChannels.find((c) => c.key === channel)?.hint}
-              </div>
-              <input
-                className="inputlike"
-                placeholder="赞助墙署名（将永久展示）"
-                value={nick}
-                onChange={(e) => setNick(e.target.value)}
-                maxLength={20}
-              />
-              <div className="mute" style={{ fontSize: 11.5, marginTop: 8 }}>
-                留言的署名会永久显示在赞助墙上，提交前请确认。
-              </div>
-              <button
-                className="btn"
-                style={{ marginTop: 12 }}
-                onClick={() =>
-                  copyText(
-                    [
-                      `赞助档位：${picked.name}`,
-                      `金额：¥${picked.amount}（按次，不自动续费）`,
-                      `渠道：${payChannels.find((c) => c.key === channel)?.label}`,
-                      `署名：${nick.trim() || '未填'}`,
-                      '（演示文本，未接入支付）',
-                    ].join('\n'),
-                  ).then((ok) => push(ok ? '赞助说明已复制' : '复制失败，请手动选取', ok ? 'good' : 'info'))
-                }
-              >
-                <Icon name="share" size={15} /> 复制赞助说明
+
+              <ul style={{ display: 'grid', gap: 6, fontSize: 12.5, color: 'var(--fg-2)', marginTop: 18, paddingLeft: 18 }}>
+                {picked.benefits.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {pay && pay.status === 'pending' && (
+            <div>
+              <p style={{ fontSize: 13.5, marginBottom: 8 }}>订单已创建，请在支付页面完成付款。</p>
+              <p className="mute" style={{ fontSize: 12, marginBottom: 14 }}>
+                订单号：<span className="mono">{pay.orderNo}</span> · 页面会自动检查支付结果
+              </p>
+              <button className="btn btn--block" onClick={() => window.open(pay.payUrl, '_blank', 'noopener')}>
+                <Icon name="share" size={15} /> 打开支付页面
               </button>
+              <p className="mute" style={{ fontSize: 11.5, marginTop: 12 }}>
+                支付完成后一般几秒内自动确认；若浏览器拦截了新窗口，请点击上面的按钮手动打开。
+              </p>
             </div>
-          </div>
+          )}
 
-          <ul style={{ display: 'grid', gap: 6, fontSize: 12.5, color: 'var(--fg-2)', marginTop: 18, paddingLeft: 18 }}>
-            {picked.benefits.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </ul>
+          {pay && pay.status === 'paid' && (
+            <div>
+              <div className="row" style={{ gap: 8, marginBottom: 10 }}>
+                <Icon name="check" size={18} />
+                <b style={{ fontSize: 15 }}>支付成功，感谢你的支持</b>
+              </div>
+              <p className="mute" style={{ fontSize: 12.5, lineHeight: 1.8 }}>
+                订单号 <span className="mono">{pay.orderNo}</span>，金额 ¥{picked.amount}。
+                电子感谢卡与署名展示会陆续更新。
+              </p>
+            </div>
+          )}
+
+          {pay && pay.status !== 'pending' && pay.status !== 'paid' && (
+            <div>
+              <p style={{ fontSize: 13.5, marginBottom: 8 }}>
+                {pay.status === 'timeout' ? '暂未收到支付结果' : `订单状态：${STATUS_LABEL[pay.status] ?? pay.status}`}
+              </p>
+              <p className="mute" style={{ fontSize: 12.5, lineHeight: 1.8 }}>
+                如果你已完成支付，请稍后再点「我已完成支付」刷新；仍未到账可保留订单号联系站长。
+              </p>
+            </div>
+          )}
         </Modal>
       )}
     </div>
-  )
-}
-
-/** 由种子生成的伪二维码图形：纯装饰，不可扫描 */
-function QrPlaceholder({ seed, size = 112 }: { seed: string; size?: number }) {
-  const cells = 21
-  const s = size / cells
-  const bits = useMemo(() => {
-    let h = hash32(seed)
-    const out: boolean[] = []
-    for (let i = 0; i < cells * cells; i++) {
-      h = (h * 1664525 + 1013904223) >>> 0
-      out.push(((h >>> 7) & 1) === 1)
-    }
-    return out
-  }, [seed])
-
-  // 三个定位角占用的区域不画数据点
-  const inFinder = (r: number, c: number) =>
-    (r < 8 && c < 8) || (r < 8 && c >= cells - 8) || (r >= cells - 8 && c < 8)
-
-  return (
-    <svg viewBox={`0 0 ${size} ${size}`} aria-label="占位二维码">
-      <rect width={size} height={size} fill="#fff" />
-      {Array.from({ length: cells * cells }).map((_, i) => {
-        const r = Math.floor(i / cells)
-        const c = i % cells
-        if (inFinder(r, c) || !bits[i]) return null
-        return <rect key={i} x={c * s} y={r * s} width={s} height={s} fill="#12141a" />
-      })}
-      {([
-        [0, 0],
-        [0, cells - 7],
-        [cells - 7, 0],
-      ] as [number, number][]).map(([br, bc]) => (
-        <g key={`${br}-${bc}`}>
-          <rect x={bc * s} y={br * s} width={s * 7} height={s * 7} fill="#12141a" />
-          <rect x={(bc + 1) * s} y={(br + 1) * s} width={s * 5} height={s * 5} fill="#fff" />
-          <rect x={(bc + 2) * s} y={(br + 2) * s} width={s * 3} height={s * 3} fill="#12141a" />
-        </g>
-      ))}
-    </svg>
   )
 }

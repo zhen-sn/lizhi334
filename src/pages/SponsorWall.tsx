@@ -1,7 +1,7 @@
 import { type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
-import { Section, DemoNotice } from '../components/common/Primitives'
+import { Section } from '../components/common/Primitives'
 import { sponsorWall } from '../data/sponsors'
 import { tourDoneCount, TOUR_TARGET } from '../data/tour'
 
@@ -78,7 +78,7 @@ export default function SponsorWall() {
         </div>
       </div>
 
-      <Section title="滚动墙" subtitle={`${sponsorWall.length} 位赞助者（演示）· 悬停暂停`}>
+      <Section title="滚动墙" subtitle={`${sponsorWall.length} 位赞助者 · 悬停暂停`}>
         <div className="wallflow">
           <WallRow items={rowA} />
           <WallRow items={rowB} reverse />
@@ -110,9 +110,6 @@ export default function SponsorWall() {
         </div>
       </Section>
 
-      <DemoNotice>
-        赞助墙数据为演示内容；正式版会展示经赞助者确认的署名、金额与日期，且署名提交后长期保留。
-      </DemoNotice>
     </div>
   )
 }

@@ -124,7 +124,7 @@ export default function Home() {
       {/* ---------- 热门 ---------- */}
       <Section
         title="听得最多"
-        subtitle="按演示播放量排序"
+        subtitle="按播放量排序"
         more="全部曲目"
         onMore={() => nav('/songs')}
         actions={

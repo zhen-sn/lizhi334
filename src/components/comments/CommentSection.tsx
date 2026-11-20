@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Icon } from '../common/Icon'
 import { Section } from '../common/Primitives'
@@ -26,9 +26,15 @@ export function CommentSection({ target, title = '评论' }: { target: string; t
   const openAuth = useUi((s) => s.openAuth)
   const push = useUi((s) => s.push)
   const list = useComments((s) => s.byTarget[target]) ?? []
+  const fetchComments = useComments((s) => s.fetchComments)
   const add = useComments((s) => s.add)
   const remove = useComments((s) => s.remove)
   const toggleLike = useComments((s) => s.toggleLike)
+
+  // 进入页面时从服务器同步该对象的评论
+  useEffect(() => {
+    void fetchComments(target)
+  }, [target, fetchComments])
 
   const [text, setText] = useState('')
   const [reply, setReply] = useState<CommentItem | null>(null)
@@ -80,7 +86,10 @@ export function CommentSection({ target, title = '评论' }: { target: string; t
     push('评论已发布', 'good')
   }
 
-  const liked = (c: CommentItem) => Boolean(user && c.likes.includes(user.id))
+  const liked = (c: CommentItem) =>
+    c.liked !== undefined ? c.liked : Boolean(user && c.likes.includes(user.id))
+
+  const likeCount = (c: CommentItem) => c.likeCount ?? c.likes.length
 
   const renderItem = (c: CommentItem, isReply = false) => (
     <div className={`comment ${isReply ? 'comment--reply' : ''}`} key={c.id}>
@@ -95,7 +104,7 @@ export function CommentSection({ target, title = '评论' }: { target: string; t
         <div className="comment__acts">
           <button className={`comment__act ${liked(c) ? 'is-on' : ''}`} onClick={() => onLike(c)}>
             <Icon name={liked(c) ? 'heart' : 'heartLine'} size={14} />
-            {c.likes.length > 0 ? c.likes.length : '点赞'}
+            {likeCount(c) > 0 ? likeCount(c) : '点赞'}
           </button>
           <button className="comment__act" onClick={() => onReply(c)}>
             <Icon name="chat" size={14} />

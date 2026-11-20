@@ -4,3 +4,23 @@ release
 .DS_Store
 *.local
 .vite
+
+# 本地配置与凭据
+server/.env
+
+# 运行时产物
+server/installed.lock
+server/storage/cache/*
+!server/storage/cache/.gitkeep
+server/public/uploads/*
+!server/public/uploads/.gitkeep
+
+# 数据库备份（含账号与业务数据）
+数据库/
+
+# 临时文件
+.tmp*
+*.log
+.screenshots/
+.tmp-crop/
+.trae-html-share-packages/

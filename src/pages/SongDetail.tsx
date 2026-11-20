@@ -9,7 +9,7 @@ import { Cover } from '../components/common/Cover'
 import { Icon } from '../components/common/Icon'
 import { Slider } from '../components/common/Slider'
 import { Lyrics, useSongLyric } from '../components/lyrics/Lyrics'
-import { Section, Empty, Level, DemoNotice } from '../components/common/Primitives'
+import { Section, Empty, Level } from '../components/common/Primitives'
 import { CommentSection } from '../components/comments/CommentSection'
 import { mmss, playCount } from '../lib/format'
 import { download, renderShareCard } from '../lib/share'
@@ -41,7 +41,7 @@ export default function SongDetail() {
     return (
       <Empty
         text="找不到这首曲目"
-        hint={`编号「${id}」不在演示库里`}
+        hint={`编号「${id}」未找到`}
         action={
           <Link to="/songs" className="btn btn--primary">
             全部曲目
@@ -167,10 +167,7 @@ export default function SongDetail() {
             height={360}
           />
         </Section>
-
-        <DemoNotice>
-          时长、BPM、调性、Capo 与歌词均为结构占位；正式版请替换为经授权的授权内容或绑定用户自有歌词。
-        </DemoNotice>
+
 
         <CommentSection target={`song:${song.id}`} />
       </div>
@@ -206,7 +203,7 @@ export default function SongDetail() {
             </b>
           </div>
           <div className="fact">
-            <span>演示播放量</span>
+            <span>播放量</span>
             <b className="mono">{playCount(song.playCount)}</b>
           </div>
           <div className="fact">

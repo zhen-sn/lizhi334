@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { songMap } from '../data/songs'
-import { activeIndex, parseLrc, buildPlaceholderLrc } from '../lib/lrc'
+import { ensureSongDetail } from '../api/content'
+import { activeIndex, parseLrc } from '../lib/lrc'
 import { usePlayer } from '../store/player'
 import type { LyricLine, LyricState } from '../types/desktop'
 
@@ -14,6 +15,7 @@ export function useDesktopBridge() {
     if (!desktop) return
 
     let lastSongId: string | null = null
+    const lyricsTried = new Set<string>()
 
     const push = () => {
       const p = usePlayer.getState()
@@ -21,7 +23,14 @@ export function useDesktopBridge() {
         // 切歌时顺便把歌词完整包发过去，让迷你窗和歌词窗都能立刻拿到
         lastSongId = p.currentId
         const song = p.currentId ? songMap[p.currentId] : null
-        const raw = song?.lyrics?.trim() || (song ? buildPlaceholderLrc(song.duration, song.title) : '')
+        // bootstrap 不含歌词：先推空行，歌词拉取完成后再补推一次
+        if (song && !song.lyrics?.trim() && !lyricsTried.has(song.id)) {
+          lyricsTried.add(song.id)
+          ensureSongDetail(song.id).then(() => {
+            lastSongId = null
+          })
+        }
+        const raw = song?.lyrics?.trim() || ''
         const lines: LyricLine[] = raw ? parseLrc(raw) : []
         desktop.sendLyricState?.({
           songId: p.currentId,
@@ -74,13 +83,18 @@ export function useDesktopLyricTick() {
     const desktop = window.desktop
     if (!desktop) return
 
+    const sentLyrics = new Set<string>()
+
     const pushTick = () => {
       const p = usePlayer.getState()
       const song = p.currentId ? songMap[p.currentId] : null
-      const raw = song?.lyrics?.trim() || (song ? buildPlaceholderLrc(song.duration, song.title) : '')
+      const raw = song?.lyrics?.trim() || ''
       const lines = raw ? parseLrc(raw) : []
       const idx = activeIndex(lines, p.time)
-      const isNewSong = last.current.songId !== p.currentId
+      let isNewSong = last.current.songId !== p.currentId
+      // 懒加载的歌词到达后，即使还是同一首也补推一次完整歌词
+      if (!isNewSong && song?.lyrics?.trim() && !sentLyrics.has(song.id)) isNewSong = true
+      if (isNewSong && song?.lyrics?.trim()) sentLyrics.add(song.id)
       if (!isNewSong && last.current.idx === idx) return
       last.current = { songId: p.currentId, idx }
       const state: LyricState = {

@@ -125,7 +125,7 @@ export default function Settings() {
           <div className="srowform">
             <div className="srowform__label">
               <b>手动开启生日模式</b>
-              <span>演示用：不必等到生日当天，直接看彩带效果</span>
+              <span>不必等到生日当天，直接看彩带效果</span>
             </div>
             <Toggle on={st.birthdayMode} onChange={(v) => st.set({ birthdayMode: v })} />
           </div>

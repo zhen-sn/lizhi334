@@ -4,7 +4,7 @@ import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
 import { SongList } from '../components/music/SongList'
 import { Modal } from '../components/common/Overlays'
-import { Chips, DemoNotice, Empty, PlayAll, Section, Stat } from '../components/common/Primitives'
+import { Chips, Empty, PlayAll, Section, Stat } from '../components/common/Primitives'
 import { songMap } from '../data/songs'
 import { albumMap } from '../data/albums'
 import { mmss, todayKey } from '../lib/format'
@@ -299,11 +299,7 @@ export default function History() {
           />
         </Section>
       )}
-
-      <DemoNotice>
-        历史只保存在浏览器 localStorage（<code className="mono">lz334:library</code>），换设备不会同步；
-        上限 100 条，接入后端后可改为 <code className="mono">GET /history?cursor=</code> 分页拉取。
-      </DemoNotice>
+
 
       {confirm && (
         <Modal

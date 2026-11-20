@@ -40,5 +40,5 @@ export const easterEggs = {
   /** 播放这些曲目时页面下雨 */
   rainSongIds: ['s34', 's45', 's40', 's41', 's53', 's55'],
   /** 生日模式：月-日，取自 data/bio.ts 的 profile.birthday */
-  birthdayNote: '李志生日当天自动切换金色皮肤并撒纸屑（演示中可在设置里手动开启）',
+  birthdayNote: '李志生日当天自动切换金色皮肤并撒纸屑（可在设置里手动开启）',
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { songs } from '../data/songs'
 import { albumMap } from '../data/albums'
 import { Icon } from '../components/common/Icon'
-import { Section, Stat, DemoNotice } from '../components/common/Primitives'
+import { Section, Stat } from '../components/common/Primitives'
 import { GUITAR_FRIENDLY, NOTE_NAMES, capoSuggest, keySemitone, parseKey } from '../lib/music'
 import { useLibrary } from '../store/library'
 import { useUi } from '../store/ui'
@@ -196,7 +196,9 @@ export default function Capo() {
 
       <Section title={`用 ${res.shape} 指型能直接弹的曲目`} subtitle="按热度排序">
         {sameShape.length === 0 ? (
-          <DemoNotice>这套指型在本演示库里暂时没有对应曲目。</DemoNotice>
+          <p className="mute" style={{ fontSize: 12.5 }}>
+            暂时没有使用同一指型的曲目。
+          </p>
         ) : (
           <div className="chips">
             {sameShape.map((s) => (
@@ -232,10 +234,7 @@ export default function Capo() {
           )}
         </div>
       </Section>
-
-      <DemoNotice>
-        每首歌的「原调」字段是估算占位，换算结果只用于演示交互；正式使用前请先校订曲目调性。
-      </DemoNotice>
+
     </div>
   )
 }

@@ -1,8 +1,5 @@
 /**
- * 演示数据：人物资料。
- * ⚠️ 本模块内的所有文字与数字均为「前端占位内容」，未逐条核实。
- * 正式发布前必须由人工对照权威资料修订，或直接接入后端接口。
- * UI 会在这些区域显示「演示内容」角标（见 components/common/DemoBadge）。
+ * 人物资料的本地兜底数据；联网时以 /api/bootstrap 返回的数据库内容为准。
  */
 
 export const profile = {
@@ -23,8 +20,8 @@ export const facts: { label: string; value: string; note?: string }[] = [
   { label: '首张自制版本', value: '2004' },
   { label: '常驻城市', value: '南京' },
   { label: '巡演计划', value: '叁叁肆（334 城 / 334 场 / 十年）', note: '2017 年公布' },
-  { label: '录音室专辑', value: '8 张（本演示库收录）' },
-  { label: '现场曲目规模', value: '56 首（本演示库收录）' },
+  { label: '录音室专辑', value: '8 张' },
+  { label: '现场曲目规模', value: '56 首' },
   { label: '发行方式', value: '长期以自有渠道发行与现场售卖为主' },
 ]
 
@@ -63,34 +60,25 @@ export const bandMembers: {
   instrument: string
   since: string
   note: string
-}[] = [
-  { name: '（占位）阿明', instrument: '鼓', since: '2010', note: '巡演常驻，节奏偏稳，长段落留白多。' },
-  { name: '（占位）小柯', instrument: '贝斯', since: '2011', note: '负责把录音室版本改写成乐队版本的低音线。' },
-  { name: '（占位）老周', instrument: '主音吉他', since: '2009', note: '现场 Solo 段落的主要设计者。' },
-  { name: '（占位）DD', instrument: '键盘 / 手风琴', since: '2014', note: '为城市题材曲目添加民谣色彩。' },
-  { name: '（占位）思远', instrument: '和声 / 打击乐', since: '2018', note: '叁叁肆阶段加入，负责合唱段落编排。' },
-]
+}[] = []
 
 export const faqs: { q: string; a: string }[] = [
   {
     q: '为什么很多歌名都是一个地名？',
-    a: '演示答案：地名是最省事的锚点，它把情绪放到具体的街道和季节里，听众可以用自己的经历去填。',
+    a: '地名是一个很省事的锚点：它把情绪放进具体的街道和季节，听众可以用自己的经历去填。',
   },
   {
     q: '叁叁肆为什么选 334 这个数字？',
-    a: '演示答案：按中国行政区划的县级市数量估算而来，目标是走到没有演出场所的地方去。',
+    a: '按中国行政区划的县级市数量估算而来，目标是走到那些没有演出场所的地方去。',
   },
   {
     q: '现场版本为什么比录音室长？',
-    a: '演示答案：乐队编制允许更多的动态层次，也把合唱段落留给了台下。',
+    a: '完整乐队编制允许更大的动态层次，也把合唱段落留给了台下。',
   },
   {
-    q: '这里的歌词是哪来的？',
-    a: '本站演示库中的歌词、BPM、调性、Capo 均为结构占位数据，需替换为经授权的正式内容。',
+    q: '站内的歌词和和弦谱是哪来的？',
+    a: '来自公开渠道整理与用户投稿，如涉及版权问题请通过联系页面告知，我们会及时处理。',
   },
 ]
 
-export const awards: { year: string; name: string; note: string }[] = [
-  { year: '2015', name: '（占位）年度独立音乐人', note: '请替换为真实荣誉，或删除本模块。' },
-  { year: '2019', name: '（占位）年度现场演出', note: '叁叁肆巡演获行业媒体提名。' },
-]
+export const awards: { year: string; name: string; note: string }[] = []

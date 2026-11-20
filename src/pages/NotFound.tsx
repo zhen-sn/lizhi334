@@ -67,7 +67,7 @@ export default function NotFound() {
       <Section title="常见原因" subtitle="如果是从别处点过来的">
         <div className="card card--flat">
           <ul style={{ display: 'grid', gap: 9, fontSize: 13, color: 'var(--fg-2)', lineHeight: 1.8, paddingLeft: 18 }}>
-            <li>曲目 / 专辑 / 歌单的编号写错了 —— 演示库里的 id 形如 <code className="mono">s01</code>、<code className="mono">a03</code>、<code className="mono">p-default</code>。</li>
+            <li>曲目 / 专辑 / 歌单的编号写错了 —— 编号形如 <code className="mono">s01</code>、<code className="mono">a03</code>、<code className="mono">p-default</code>。</li>
             <li>歌单被删掉了 —— 回到「我喜欢」再找其它歌单。</li>
             <li>把 <code className="mono">/tools/chords/&lt;songId&gt;</code> 指向了还没录入谱的曲目 —— 先去谱库看看有哪些。</li>
             <li>链接是别人手打的 —— 让他直接分享页面顶部地址栏里的 <code className="mono">#/...</code>。</li>

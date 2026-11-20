@@ -3,6 +3,17 @@ import { load, save } from '../lib/storage'
 import { songs, songMap } from '../data/songs'
 import type { StatSnapshot } from '../data/achievements'
 import { achievements } from '../data/achievements'
+import { api } from '../api/client'
+import { useAuth } from './auth'
+
+/** 已登录时把本地操作同步到服务器；失败静默（离线可用） */
+const fire = (p: Promise<unknown>) => {
+  p.catch(() => undefined)
+}
+const loggedIn = () => Boolean(useAuth.getState().user)
+const serverId = (id: string) => /^p\d+$/.test(id)
+/** 本地新建歌单的临时 id（p + base36 时间戳） */
+const tempPlaylist = (id: string) => !serverId(id)
 
 export interface Playlist {
   id: string
@@ -96,6 +107,8 @@ export interface LibraryState extends PersistShape {
   stats: () => StatSnapshot
   /** 返回本次新解锁的成就 id */
   checkAchievements: () => string[]
+  /** 登录后从服务器拉取收藏/歌单/历史/播放位置 */
+  syncFromServer: () => Promise<void>
 }
 
 export const useLibrary = create<LibraryState>((set, get) => {
@@ -118,6 +131,7 @@ export const useLibrary = create<LibraryState>((set, get) => {
         favorites: has ? s.favorites.filter((x) => x !== id) : [id, ...s.favorites],
       }))
       touch()
+      if (loggedIn()) fire(api(`/library/favorites/${encodeURIComponent(id)}`, { method: 'POST' }))
       return !has
     },
 
@@ -134,19 +148,46 @@ export const useLibrary = create<LibraryState>((set, get) => {
         ],
       }))
       touch()
+      if (loggedIn()) {
+        fire(
+          api<{ id: string }>('/library/playlists', { method: 'POST', body: { name, desc } }).then(
+            (res) => {
+              const cur = get()
+              const pl = cur.playlists.find((p) => p.id === id)
+              if (!pl || !res?.id) return
+              set({ playlists: cur.playlists.map((p) => (p.id === id ? { ...p, id: res.id } : p)) })
+              touch()
+              // 建单瞬间已加入的歌，补发到新 id 下
+              for (const sid of pl.songIds) {
+                fire(
+                  api(`/library/playlists/${res.id}/songs`, {
+                    method: 'POST',
+                    body: { songId: sid },
+                  }),
+                )
+              }
+            },
+          ),
+        )
+      }
       return id
     },
 
-    renamePlaylist(id, name) {
+renamePlaylist(id, name) {
       set((s) => ({
         playlists: s.playlists.map((p) => (p.id === id ? { ...p, name } : p)),
       }))
       touch()
+      if (loggedIn() && serverId(id)) {
+        const cur = get().playlists.find((p) => p.id === id)
+        fire(api(`/library/playlists/${id}`, { method: 'PUT', body: { name, desc: cur?.desc ?? '' } }))
+      }
     },
 
     deletePlaylist(id) {
       set((s) => ({ playlists: s.playlists.filter((p) => p.id !== id) }))
       touch()
+      if (loggedIn() && !tempPlaylist(id)) fire(api(`/library/playlists/${id}`, { method: 'DELETE' }))
     },
 
     addToPlaylist(pid, songId) {
@@ -158,6 +199,9 @@ export const useLibrary = create<LibraryState>((set, get) => {
         ),
       }))
       touch()
+      if (loggedIn() && !tempPlaylist(pid)) {
+        fire(api(`/library/playlists/${pid}/songs`, { method: 'POST', body: { songId } }))
+      }
     },
 
     removeFromPlaylist(pid, songId) {
@@ -167,6 +211,11 @@ export const useLibrary = create<LibraryState>((set, get) => {
         ),
       }))
       touch()
+      if (loggedIn() && !tempPlaylist(pid)) {
+        fire(
+          api(`/library/playlists/${pid}/songs/${encodeURIComponent(songId)}`, { method: 'DELETE' }),
+        )
+      }
     },
 
     recordPlay(songId) {
@@ -176,6 +225,8 @@ export const useLibrary = create<LibraryState>((set, get) => {
         history: [{ songId, at: Date.now() }, ...s.history.filter((h) => h.songId !== songId)].slice(0, 100),
       }))
       touch()
+      // 匿名也上报：用于全站播放量
+      fire(api('/report/play', { method: 'POST', body: { songId } }))
     },
 
     recordFinish(songId, seconds) {
@@ -186,21 +237,48 @@ export const useLibrary = create<LibraryState>((set, get) => {
         completedSongs: s.completedSongs + 1,
       }))
       touch()
+      fire(api('/report/finish', { method: 'POST', body: { songId, seconds: Math.round(seconds) } }))
     },
 
     setPos(songId, sec) {
       set((s) => ({ lastPos: { ...s.lastPos, [songId]: sec } }))
       touch()
+      if (loggedIn()) {
+        fire(api('/library/position', { method: 'POST', body: { songId, seconds: Math.round(sec) } }))
+      }
     },
 
     bumpCapoCalc() {
       set((s) => ({ capoCalcs: s.capoCalcs + 1 }))
       touch()
+      if (loggedIn()) fire(api('/library/capo', { method: 'POST' }))
     },
 
     clearHistory() {
       set({ history: [] })
       touch()
+      if (loggedIn()) fire(api('/library/history/clear', { method: 'POST' }))
+    },
+
+    async syncFromServer() {
+      if (!loggedIn()) return
+      try {
+        const [favs, lists, hist, pos] = await Promise.all([
+          api<string[]>('/library/favorites'),
+          api<Playlist[]>('/library/playlists'),
+          api<{ songId: string; at: number }[]>('/library/history'),
+          api<Record<string, number>>('/library/positions'),
+        ])
+        set({
+          favorites: Array.isArray(favs) ? favs : get().favorites,
+          playlists: Array.isArray(lists) && lists.length ? lists : get().playlists,
+          history: Array.isArray(hist) ? hist.map((h) => ({ songId: h.songId, at: h.at })) : get().history,
+          lastPos: pos && typeof pos === 'object' ? pos : get().lastPos,
+        })
+        touch()
+      } catch {
+        // 离线：保持本地缓存
+      }
     },
 
     stats() {

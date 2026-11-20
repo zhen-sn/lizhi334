@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
-import { Section, Stat, DemoNotice, Empty, Level } from '../components/common/Primitives'
+import { Section, Stat, Empty, Level } from '../components/common/Primitives'
 import { achievements } from '../data/achievements'
 import { albums, albumMap } from '../data/albums'
 import { songs, songMap, allCities } from '../data/songs'
@@ -296,10 +296,7 @@ export default function Stats() {
           判定全部在本地完成，换一台设备需要同步数据后才能延续（设置页支持导出 / 导入 JSON）。
         </p>
       </Section>
-
-      <DemoNotice>
-        本页数据来自 localStorage（命名空间 lz334:），不会上传；清除浏览器数据即重置。演示曲目本身播放量为占位数值，与你的统计分开计算。
-      </DemoNotice>
+
     </div>
   )
 }

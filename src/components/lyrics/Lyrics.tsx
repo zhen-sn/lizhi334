@@ -1,17 +1,35 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Song } from '../../data/types'
-import { activeIndex, buildPlaceholderLrc, parseLrc } from '../../lib/lrc'
+import { activeIndex, parseLrc } from '../../lib/lrc'
 import { useSettings } from '../../store/settings'
+import { ensureSongDetail } from '../../api/content'
+import { songMap } from '../../data/songs'
 
 export function useSongLyric(song?: Song | null) {
-  return useMemo(() => {
-    if (!song) return { lines: [], placeholder: true }
-    const raw = song.lyrics?.trim() || buildPlaceholderLrc(song.duration, song.title)
-    return {
-      lines: parseLrc(raw),
-      placeholder: raw.includes('结构占位歌词'),
+  const [lyrics, setLyrics] = useState(() => song?.lyrics || '')
+
+  useEffect(() => {
+    if (!song) {
+      setLyrics('')
+      return
     }
-  }, [song])
+    setLyrics(song.lyrics || '')
+    if (song.lyrics?.trim()) return
+
+    // bootstrap 不含歌词，进入详情/播放时再按需拉取
+    let alive = true
+    ensureSongDetail(song.id).then(() => {
+      if (alive) setLyrics(songMap[song.id]?.lyrics || '')
+    })
+    return () => {
+      alive = false
+    }
+  }, [song?.id, song?.lyrics])
+
+  return useMemo(() => {
+    if (!song) return { lines: [], placeholder: false }
+    return { lines: parseLrc(lyrics.trim()), placeholder: false }
+  }, [song, lyrics])
 }
 
 export function Lyrics({
@@ -27,7 +45,7 @@ export function Lyrics({
   height?: number | string
   className?: string
 }) {
-  const { lines, placeholder } = useSongLyric(song)
+  const { lines } = useSongLyric(song)
   const ref = useRef<HTMLUListElement>(null)
   const idx = activeIndex(lines, time)
   const lastIdx = useRef(-1)
@@ -49,11 +67,6 @@ export function Lyrics({
   return (
     <div className="lyric-wrap" data-lyric-size={size}>
       <ul ref={ref} className={`lyrics ${className}`} style={height ? { height } : undefined}>
-        {placeholder && (
-          <li className="lyrics__meta" style={{ cursor: 'default' }}>
-            ⚠ 结构占位歌词 · 需绑定已授权文本
-          </li>
-        )}
         {lines.length === 0 && (
           <li className="lyrics__meta" style={{ cursor: 'default' }}>
             暂无歌词

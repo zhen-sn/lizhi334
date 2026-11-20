@@ -5,7 +5,7 @@ import { categories, filterByCategory, allTags, allCities } from '../data/songs'
 import { albumTypeLabel } from '../data/albums'
 import { SongList } from '../components/music/SongList'
 import { Cover } from '../components/common/Cover'
-import { Chips, Tabs, PlayAll, DemoNotice, Empty } from '../components/common/Primitives'
+import { Chips, Tabs, PlayAll, Empty } from '../components/common/Primitives'
 import { Icon } from '../components/common/Icon'
 import { mmss } from '../lib/format'
 import { usePlayer } from '../store/player'
@@ -71,7 +71,7 @@ export default function Songs() {
     <div>
       <div className="page-head">
         <h1>歌曲</h1>
-        <p>{songs.length} 首曲目 · {albums.length} 张唱片，全部为演示数据。</p>
+        <p>{songs.length} 首曲目 · {albums.length} 张唱片。</p>
       </div>
 
       <Tabs<Tab>
@@ -86,8 +86,7 @@ export default function Songs() {
       />
 
       {tab === 'albums' && (
-        <>
-          <DemoNotice>专辑名称、年份、曲目数与简介均为占位内容，需对照权威 discography 校订。</DemoNotice>
+        <>
           {(['studio', 'live', 'ep', 'single', 'compilation'] as const).map((type) => {
             const group = albums.filter((a) => a.type === type)
             if (!group.length) return null

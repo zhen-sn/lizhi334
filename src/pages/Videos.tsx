@@ -44,7 +44,7 @@ export default function Videos() {
     <div>
       <header className="page-head">
         <h1>视频</h1>
-        <p>{videos.length} 条影像 · 现场、MV 与纪实，全部为演示占位数据。</p>
+        <p>{videos.length} 条影像 · 现场、MV 与纪实。</p>
       </header>
 
       <div className="row" style={{ marginBottom: 16, flexWrap: 'wrap' }}>

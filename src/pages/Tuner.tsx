@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
-import { Section, Toggle, DemoNotice } from '../components/common/Primitives'
+import { Section, Toggle } from '../components/common/Primitives'
 import { ChordDiagram } from '../components/tools/ChordDiagram'
 import { chordMap } from '../data/chords'
 import { analyze, startMic, freqToMidi, midiToCents, type MicSession } from '../lib/pitch'
@@ -280,10 +280,7 @@ export default function Tuner() {
           )}
         </div>
       </Section>
-
-      <DemoNotice>
-        测音算法为前端自相关实现，适合木吉他空弦与长音；拨片噪音、泛音与很低的 6 弦在嘈杂环境下可能判读失败，属正常现象。
-      </DemoNotice>
+
     </div>
   )
 }

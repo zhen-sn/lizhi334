@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/common/Icon'
-import { Section, Tabs, Stat, DemoNotice } from '../components/common/Primitives'
+import { Section, Tabs, Stat } from '../components/common/Primitives'
 import { Cover } from '../components/common/Cover'
 import {
   TOUR_NAME,
@@ -188,7 +188,7 @@ export default function Tour334() {
           </Section>
 
           {todoProvinces.length > 0 && (
-            <Section title="还没有走到的省份" subtitle="演示数据里进度为 0 的区域">
+            <Section title="还没有走到的省份" subtitle="尚未安排的城市">
               <div className="chips">
                 {todoProvinces.map((p) => (
                   <span className="chip" key={p}>
@@ -226,7 +226,7 @@ export default function Tour334() {
               <span>城市</span>
               <span>省份</span>
               <span>状态</span>
-              <span>场地（占位）</span>
+              <span>场地</span>
               <span style={{ textAlign: 'right' }}>操作</span>
             </div>
             {matched.slice(0, 220).map((c) => (
@@ -358,7 +358,9 @@ export default function Tour334() {
           ))}
         </div>
         {citySongs.length === 0 ? (
-          <DemoNotice>演示库里这个城市暂时没有对应曲目。</DemoNotice>
+          <p className="mute" style={{ fontSize: 12.5 }}>
+            这个城市暂时还没有关联曲目。
+          </p>
         ) : (
           <div className="list">
             {citySongs.map((s) => (
@@ -406,10 +408,7 @@ export default function Tour334() {
           </button>
         </div>
       </Section>
-
-      <DemoNotice>
-        城市清单、年份与场地均为演示占位（共 {tourCities.length} 城，实际计划 {TOUR_TARGET} 城）；真实进度以官方公布为准，接入后端后可整表替换 <code className="mono">src/data/tour.ts</code>。
-      </DemoNotice>
+
     </div>
   )
 }

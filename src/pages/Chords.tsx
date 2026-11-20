@@ -5,7 +5,7 @@ import { albumMap } from '../data/albums'
 import { sheets, sheetMap, chordLibrary, difficultyScale } from '../data/chords'
 import { Icon } from '../components/common/Icon'
 import { Cover } from '../components/common/Cover'
-import { Chips, Empty, Level, Section, DemoNotice, Tabs } from '../components/common/Primitives'
+import { Chips, Empty, Level, Section, Tabs } from '../components/common/Primitives'
 import { ChordDiagram } from '../components/tools/ChordDiagram'
 import { mmss } from '../lib/format'
 import { useSongActions } from '../hooks/useSongActions'
@@ -131,10 +131,7 @@ export default function Chords() {
               ))}
             </div>
           )}
-
-          <DemoNotice>
-            段落走向与弹奏提示为演示占位；正式使用时请由人工对照总谱校订，并在后台为曲目绑定已授权的歌词。
-          </DemoNotice>
+
         </>
       )}
 
